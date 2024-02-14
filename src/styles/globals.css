@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* @import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap'); */
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: white) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -26,8 +28,57 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+
+html{
+  margin: unset;
+  padding: unset;
+}
+div{
+  margin: unset;
+  padding: unset;
+}
+
+li{
+  margin: unset;
+  padding: unset;
+}
+ul{
+  margin: unset;
+  padding: unset;
+}
+input{
+  border: unset;
+}
+button{
+  border: unset;
+} */
+/* 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}  */
+@tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  a {
+    @apply text-blue-600 underline;
+  }
 }
+body{
+  margin: unset;
+  padding: unset;
+  font-family: ovo;
+}
+a{
+text-decoration: unset;font-style: unset;color: unset;}

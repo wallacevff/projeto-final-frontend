@@ -1,0 +1,45 @@
+.LoginDiv{
+    display: flex;
+    background-color: black;
+    flex: 1;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    align-items: center;
+    max-width: max-content;
+    max-height: max-content;
+}
+
+.FormArea{
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    min-height: 50vh;
+    min-width: 40vw;
+    max-width: max-content;
+    max-height: max-content;
+    padding: 20px;
+    /* height: 40vh; */
+    border-radius: 2%;
+}
+
+.LoginDiv .FormArea .LoginForm{
+    display: flex;
+    /* justify-content: center;
+    align-content: center; */
+    flex-direction: column;
+    /* min-width: max-content;
+    min-height: max-content; */
+}
+.LoginForm input{
+    padding: 10px;
+    border-radius: 10px;
+}
+.ButtonGroup{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}

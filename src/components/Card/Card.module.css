@@ -1,0 +1,39 @@
+.Card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* min-width: 30%;
+    min-height: 30%; */
+    /* padding-top: 20px; */
+    height: max-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    background-color: #3F82A7;
+    border-radius: 10px;
+    font-weight: 1000;
+    color: white;
+    margin: 10px;
+    /* overflow: hidden; */
+}
+
+.Card .Header{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: inherit;
+}
+.Card .Body{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* flex: 1; */
+    background-color: gray;
+    /* min-width: 100%; */
+    min-height: 100px;
+    max-height: max-content;
+    padding: 10px;
+    /* overflow: hidden; */
+    
+}
