@@ -13,8 +13,8 @@ type UserContext = {
 }
 
 const initialState: user = {
-    username: "asd",
-    password: "sd",
+    username: "",
+    password: "",
 }
 
 export const AppContext = React.createContext(initialState as UserContext);

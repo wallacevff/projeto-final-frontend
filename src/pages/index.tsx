@@ -34,13 +34,13 @@ export default function Home() {
                     title="Criar Curso"
                     color="#070F2B"
                     colorHove="#020614"
-                    action={() => router.push("/CriarCurso")}
+                    action={() => router.push("/")}
                 ></PanelButton>
                 <PanelButton
                     title="Meu Perfil"
                     color="#FC6736"
                     colorHove="#bf522e"
-                    action={() => router.push("/tarefas")}
+                    action={() => router.push("/")}
                 ></PanelButton>
                 <PanelButton
                     title="Logoff"
