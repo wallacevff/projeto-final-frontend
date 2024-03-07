@@ -34,7 +34,7 @@ const CursoId = () => {
                 <PanelButton
                     title="Alunos"
                     color="#211951"
-                    action={() => router.push("/Alunos")}
+                    action={() => router.push("/alunos")}
                 ></PanelButton>
             </PanelGroupButton>
 

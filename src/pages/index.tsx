@@ -22,9 +22,9 @@ export default function Home() {
         router.push("/login");
     }
 
-    if (state.username === "" || state.password === "") {
-        router.push("/login");
-    }
+    // if (state.username === "" || state.password === "") {
+    //     typeof(window) !== "undefined" && router.push("/login");
+    // }
     return (
         <Layout title="Início"
 

@@ -6,9 +6,17 @@ const Navbar = (props: NavBarProps) => {
     return (
         <div className={NavbarCSS.NavbarRoot}>
             {props.logo}
-            <ul>
-                {props.itens.map(el =>
-                    <Link href={el.url}><li style={{marginLeft: "20px"}}>{el.title}</li></Link>
+            <ul id={"ulNavbar1"}>
+                {props.itens.map((el, key) =>
+                    <Link 
+                        id={`Item-Link-${key}`}
+                        key={`Item-Link-${key}`}
+                        href={el.url}><li id={`Item-${key}`}
+                        key={`Item-${key}`}
+                        style={{marginLeft: "20px"}}
+                    >{el.title}
+                    </li>
+                    </Link>
                 )
                 }
             </ul>

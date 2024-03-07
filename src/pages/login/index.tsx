@@ -13,9 +13,11 @@ const LoginPage = () => {
     }
     const state = useContext(AppContext);
     function login() {
-        state.setUsername(username);
+        state.setUsername("asd");
         state.setPassword(password);
-        router.push("/");
+        console.log(state);
+        console.log(username)
+        // router.push("/");
     }
     const router = useRouter();
     return <div className={LoginCSS.LoginDiv}>
