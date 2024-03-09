@@ -1,5 +1,6 @@
 import BackButton from "@/components/BackButton";
 import Card from "@/components/Card";
+import CreateButton from "@/components/CreateButton";
 import Layout from "@/components/Layout";
 import Link from "next/link";
 
@@ -7,7 +8,9 @@ const Forum = () => {
 
     return <Layout
         title="Forum"
-        buttons={[<BackButton />]}
+        buttons={[<BackButton />, <CreateButton style={{
+            marginLeft: "0.8rem"
+        }} />]}
     >
         <Link href={"/forum/1"}>
             <Card title="Topico 1">
@@ -23,7 +26,7 @@ const Forum = () => {
         </Link>
         <Link href={"/forum/3"}>
             <Card title="Topico 3">
-                <h3>Descrição: AsDSsadddddddddddddddddddddddddddddddddddddddDAD</h3>
+                <h3>Descrição: AsDSsadddddddddddddddd</h3>
                 <h2>Criado por: Fulado de Tal</h2>
             </Card>
         </Link>

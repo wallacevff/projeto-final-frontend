@@ -6,7 +6,7 @@ const NavigationButtonGroup = (props: any) => {
     return (
         <div style={{
             display: "flex",
-            flexDirection: "column",
+            flexDirection: "line",
             flex: 1,
             alignContent: "normal",
             width: "-webkit-fill-available",
