@@ -1,0 +1,27 @@
+.ToggleMenu {
+    position: relative;
+  }
+  
+  .ToggleMenu ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  .ToggleMenu ul li {
+    list-style-type: none;
+    padding: 5px 0;
+  }
+  
+  .ToggleMenu button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

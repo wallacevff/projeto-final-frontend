@@ -4,4 +4,5 @@ interface NavBarProps{
     itens: {title: string, url: string}[];
     logo: JSX.Element;
     style?: CSSProperties;
+    picture?: string;
 }

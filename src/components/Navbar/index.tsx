@@ -2,6 +2,7 @@
 import NavbarCSS from "@/components/Navbar/Navbar.module.css";
 import { NavBarProps } from "@/types/navbar/NavBarProps";
 import Link from "next/link";
+import ToggleMenu from "../UserPictureDropDownMenu";
 const Navbar = (props: NavBarProps) => {
     return (
         <div className={NavbarCSS.NavbarRoot}>
@@ -20,9 +21,10 @@ const Navbar = (props: NavBarProps) => {
                 )
                 }
             </ul>
-            <span className={NavbarCSS.UserPicture} style={{backgroundImage: `url(${"http://wallvff.com.br/perfil.jpg"})`}}>
-                
-            </span>
+            <ToggleMenu>
+            <a className={NavbarCSS.UserPicture} style={{backgroundImage: `url(${props.picture})`}} ></a>
+            </ToggleMenu>
+            
         </div>
     );
 }

@@ -9,5 +9,11 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
-  res.status(200).json({ name: "John Doe" });
+  const user: User = {
+    name: 'Wallace Vidal',
+    picture: 'http://wallvff.com.br/perfil.jpg',
+    birthdate: '1990-09-02',
+    email: 'wallvff@gmail.com'
+  };
+  res.status(200).json(user);
 }
