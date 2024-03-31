@@ -1,0 +1,18 @@
+.FormGroup{
+    display: flex;
+    flex-direction: column;
+}
+
+.FormGroup .InputText {
+    display: flex;
+    flex-direction: column;
+}
+
+.FormGroup .InputText input{
+    display: flex;
+    flex-direction: column;
+    border-color: black;
+    border-width: 1cap;
+    border-style: solid;
+    width: 50rem;
+}

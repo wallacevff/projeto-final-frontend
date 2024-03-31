@@ -45,6 +45,7 @@ const Forum = () => {
         //   fullWidth
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          style={{marginBottom: "10px"}}
         />
         <QuillEditor value={content} onChange={(e) => setContent(e)}
 

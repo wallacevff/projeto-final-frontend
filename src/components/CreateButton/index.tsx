@@ -7,7 +7,7 @@ const CreateButton = (props: ButtonProps) => {
     return <Button
         type="button"
         title="Criar"
-        action={() => router.back()}
+        action={props.action}
         style={{
             ...props?.style,
             // display: "flex",
