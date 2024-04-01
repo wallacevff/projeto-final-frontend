@@ -22,26 +22,29 @@ const LoginPage = () => {
     const router = useRouter();
     return <div className={LoginCSS.LoginDiv}>
         <div className={LoginCSS.FormArea}>
-            <div className={LoginCSS.LoginForm}>
-                <label form="username">Usuário</label>
-                <input title="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
-            </div>
-            <div className={LoginCSS.LoginForm}>
-                <label form="password">Senha</label>
-                <input title="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-            </div>
-            <div className={LoginCSS.ButtonGroup}>
-                <Button
-                    title="Login"
-                    type="button"
-                    style={{ backgroundColor: "blue" }}
-                    action={() => login()}
-                />
-                <Button
-                    title="Criar Usuário"
-                    type="button"
-                    style={styleForCriarUsuarioButton}
-                />
+            <div className={LoginCSS.FormRectangle}>
+                <div className={LoginCSS.LoginForm}>
+                    <label form="username">Usuário</label>
+                    <input title="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
+                </div>
+
+                <div className={LoginCSS.LoginForm}>
+                    <label form="password">Senha</label>
+                    <input title="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                </div>
+                <div className={LoginCSS.ButtonGroup}>
+                    <Button
+                        title="Login"
+                        type="button"
+                        style={{ backgroundColor: "blue" }}
+                        action={() => login()}
+                    />
+                    <Button
+                        title="Criar Usuário"
+                        type="button"
+                        style={styleForCriarUsuarioButton}
+                    />
+                </div>
             </div>
         </div>
     </div>

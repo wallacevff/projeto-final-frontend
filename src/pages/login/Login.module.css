@@ -1,45 +1,60 @@
 .LoginDiv{
     display: flex;
-    background-color: black;
+    background-color: #0071BD;
     flex: 1;
-    justify-content: center;
+    justify-content: right;
     min-height: 100vh;
     min-width: 100vw;
     align-items: center;
     max-width: max-content;
     max-height: max-content;
 }
-
+.FormRectangle{
+    border: solid;
+    border-width: 2cap;
+    border-color: #0071BD;
+    align-items: center;
+    align-content: center;
+    height: 70vh;
+    width: 30vw;
+    padding: 5rem;
+    border-radius: 0.5rem;
+}
 .FormArea{
     display: flex;
     flex-direction: column;
-    background-color: bisque;
+    background-color: #FFFFFF;
     align-items: center;
     align-content: center;
     justify-content: center;
-    min-height: 50vh;
-    min-width: 40vw;
+    min-height: 100vh;
+    min-width: 60vw;
     max-width: max-content;
     max-height: max-content;
     padding: 20px;
     /* height: 40vh; */
-    border-radius: 2%;
+    /* border-radius: 2%; */
 }
 
 .LoginDiv .FormArea .LoginForm{
     display: flex;
-    /* justify-content: center;
-    align-content: center; */
+    justify-content: center;
+    align-content: center; 
     flex-direction: column;
+    justify-items: center;
     /* min-width: max-content;
     min-height: max-content; */
 }
 .LoginForm input{
+    border-style: solid;
+    border-color: #577B8D;
+    border-width: 1cap;
     padding: 10px;
     border-radius: 10px;
 }
 .ButtonGroup{
     display: flex;
+    flex-direction: column;
     flex-direction: row;
     margin-top: 30px;
 }
