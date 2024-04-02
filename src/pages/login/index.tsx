@@ -1,4 +1,6 @@
 import Button from "@/components/Button";
+import EstudantesPng from "@/components/EstudantesPng";
+import UserLogo from "@/components/UserLogoPng";
 import LoginCSS from "@/pages/login/Login.module.css";
 import { AppContext } from "@/store";
 import { useRouter } from "next/router";
@@ -8,8 +10,10 @@ const LoginPage = () => {
     const [password, setPassword] = useState("");
     const styleForCriarUsuarioButton: CSSProperties =
     {
-        marginLeft: "10px",
-        background: "red"
+        // marginLeft: "10px",
+        marginTop: "10px",
+        background: "#09870e",
+        borderRadius: "10px"
     }
     const state = useContext(AppContext);
     function login() {
@@ -21,8 +25,20 @@ const LoginPage = () => {
     }
     const router = useRouter();
     return <div className={LoginCSS.LoginDiv}>
+        <div className={LoginCSS.BlueDiv}>
+
+        </div>
+        <div className={LoginCSS.Estudantes}>
+            <EstudantesPng />
+        </div>
+
         <div className={LoginCSS.FormArea}>
             <div className={LoginCSS.FormRectangle}>
+                <div className={LoginCSS.Image}>
+                    <UserLogo style={{
+
+                    } as CSSProperties} />
+                </div>
                 <div className={LoginCSS.LoginForm}>
                     <label form="username">Usuário</label>
                     <input title="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
@@ -36,7 +52,10 @@ const LoginPage = () => {
                     <Button
                         title="Login"
                         type="button"
-                        style={{ backgroundColor: "blue" }}
+                        style={{
+                            backgroundColor: "blue",
+                            borderRadius: "10px"
+                        }}
                         action={() => login()}
                     />
                     <Button
@@ -45,9 +64,11 @@ const LoginPage = () => {
                         style={styleForCriarUsuarioButton}
                     />
                 </div>
+
             </div>
         </div>
     </div>
+
 }
 
 export default LoginPage;
