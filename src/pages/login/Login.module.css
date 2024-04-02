@@ -89,18 +89,22 @@
 
 }
 .Estudantes{
-    /* display: flex; */
-    position: absolute;
+    display: flex;
+    position: relative;
+    left: 20.5vw;
+    top: -2vh;
+    overflow: hidden;
     flex-direction: column;
     /* position: -webkit-sticky; */
     flex-flow: nowrap;
     flex-wrap: nowrap;
+    justify-self: center;
     /* flex-basis: content; */
-    margin-left: 20.5vw;
+    /* margin-left: 20.5vw; */
     align-self: center;
-    width: 40%;
+    width: 999px;
 
      /* margin-left: -4;  */
-    overflow: visible;
+    /* overflow: visible; */
     /* margin-right: 39.3vw; */
 }

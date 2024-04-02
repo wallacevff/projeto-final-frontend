@@ -26,11 +26,12 @@ const LoginPage = () => {
     const router = useRouter();
     return <div className={LoginCSS.LoginDiv}>
         <div className={LoginCSS.BlueDiv}>
+            <div className={LoginCSS.Estudantes}>
+                <EstudantesPng />
+            </div>
 
         </div>
-        <div className={LoginCSS.Estudantes}>
-            <EstudantesPng />
-        </div>
+
 
         <div className={LoginCSS.FormArea}>
             <div className={LoginCSS.FormRectangle}>
