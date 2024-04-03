@@ -28,7 +28,7 @@ const Layout = (props: any) => {
     return (
         <div className={LayoutCSS.Layout}>
             <div>
-                <Navbar logo=<Logo /> itens={[
+                <Navbar logo=<Logo navBar/> itens={[
                     { title: "Home", url: "/" },
                     { title: "Meus cursos", url: "/curso" },
                 ]}
