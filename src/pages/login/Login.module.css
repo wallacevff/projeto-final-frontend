@@ -1,4 +1,4 @@
-.LoginDiv{
+.LoginDiv {
     display: flex;
     /* background-color: #0071BD; */
     flex: 1;
@@ -9,13 +9,15 @@
     max-width: max-content;
     max-height: max-content;
 }
-.BlueDiv{
+
+.BlueDiv {
     display: flex;
     background-color: #0071BD;
     min-height: 100vh;
     width: 40vw;
 }
-.FormRectangle{
+
+.FormRectangle {
     border: solid;
     border-width: 1cap;
     border-color: #0071BD;
@@ -23,13 +25,14 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: max-content;
+    height: 800px;
     width: max-content;
     margin-left: 24vw;
     padding: 5rem;
     border-radius: 0.5rem;
 }
-.FormArea{
+
+.FormArea {
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
@@ -45,24 +48,27 @@
     /* border-radius: 2%; */
 }
 
-.LoginDiv .FormArea .LoginForm{
+.LoginDiv .FormArea .LoginForm {
     display: flex;
     justify-content: center;
-    align-content: center; 
+    align-content: center;
     flex-direction: column;
     justify-items: center;
     /* min-width: max-content;
     min-height: max-content; */
 }
-.LoginForm input{
+
+.LoginForm input {
     border-style: solid;
     border-color: #577B8D;
     border-width: 1cap;
     padding: 3px;
     border-radius: 3px;
+    width: 300px;
     font-size: 8cap;
 }
-.LoginForm label{
+
+.LoginForm label {
     /* border-style: solid; */
     /* border-color: #577B8D; */
     /* border-width: 1cap; */
@@ -74,7 +80,7 @@
     /* color: #0071BD; */
 }
 
-.ButtonGroup{
+.ButtonGroup {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -86,7 +92,7 @@
     margin-top: 30px;
 }
 
-.Image{
+.Image {
     margin-top: -3rem;
     display: flex;
     /* width: strech; */
@@ -96,12 +102,14 @@
     /* padding: 1rem; */
 
 }
-.Image img{
+
+.Image img {
     display: flex;
     width: 70%;
 
 }
-.Estudantes{
+
+.Estudantes {
     display: flex;
     position: fixed;
     /* position: relative; */
@@ -118,12 +126,12 @@
     align-self: center;
     width: 40vw;
 
-     /* margin-left: -4;  */
+    /* margin-left: -4;  */
     /* overflow: visible; */
     /* margin-right: 39.3vw; */
 }
 
-.Logo{
+.Logo {
     display: flex;
     position: fixed;
     overflow: hidden;
@@ -131,7 +139,7 @@
     /* overflow: hidden; */
 
     /* top: 20px; */
-    
+
     /* width: 13rem; */
     left: 40px;
     top: 30px;
@@ -143,28 +151,30 @@
     /* justify-self: center; */
     /* align-self: center; */
 
-    
-    
+
+
 }
-.LogoSmallScreen{
+
+.LogoSmallScreen {
     position: fixed;
     visibility: hidden;
 }
 
-@media screen and (max-width: 900px) {
-    .Estudantes{
-        
+@media screen and (max-width: 1024px) {
+    .Estudantes {
         visibility: hidden;
         width: 0;
         height: 0;
     }
-    .BlueDiv{
+
+    .BlueDiv {
         position: fixed;
         visibility: hidden;
         width: 0;
         height: 0;
     }
-    .FormRectangle{
+
+    .FormRectangle {
         border: solid;
         border-width: 1cap;
         border-color: #0071BD;
@@ -179,7 +189,7 @@
         border-radius: 0.5rem;
     }
 
-    .LoginDiv{
+    .LoginDiv {
         display: flex;
         flex-direction: column;
         /* background-color: #0071BD; */
@@ -194,19 +204,34 @@
         max-width: strech;
         max-height: strech;
     }
-    .LogoSmallScreen{
+
+    .LogoSmallScreen {
         display: flex;
         position: relative;
         visibility: visible;
         /* position: fixed; */
         overflow: hidden;
         flex-direction: column;
-        width: 10rem        ;
+        width: 10rem;
         height: 10rem;
         /* top: 1vh; */
-        }
+    }
 
-      
-    
+    .FormArea {
+        display: flex;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        min-height: 100px;
+        min-width: 60px;
+        max-width: fit-content;
+        max-height: fit-content;
+        /* padding: 20px; */
+        /* height: 40vh; */
+        /* border-radius: 2%; */
+    }
+
 
 }

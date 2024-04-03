@@ -63,7 +63,7 @@ const LoginPage = () => {
                         title="Login"
                         type="button"
                         style={{
-                            backgroundColor: "blue",
+                            backgroundColor: "#0071BD",
                             borderRadius: "6px",
                             padding: "4px",
                             fontSize: "10cap"
