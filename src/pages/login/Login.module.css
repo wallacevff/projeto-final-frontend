@@ -17,7 +17,7 @@
 }
 .FormRectangle{
     border: solid;
-    border-width: 2cap;
+    border-width: 1cap;
     border-color: #0071BD;
     justify-items: center;
     justify-content: center;
@@ -58,9 +58,22 @@
     border-style: solid;
     border-color: #577B8D;
     border-width: 1cap;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 8cap;
 }
+.LoginForm label{
+    /* border-style: solid; */
+    /* border-color: #577B8D; */
+    /* border-width: 1cap; */
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 9cap;
+    font-weight: 100;
+    color: #577B8D;
+    /* color: #0071BD; */
+}
+
 .ButtonGroup{
     display: flex;
     flex-direction: column;
@@ -90,9 +103,10 @@
 }
 .Estudantes{
     display: flex;
-    position: relative;
+    position: fixed;
+    /* position: relative; */
     left: 20.5vw;
-    top: -2vh;
+    top: 5vh;
     overflow: hidden;
     flex-direction: column;
     /* position: -webkit-sticky; */
@@ -102,9 +116,97 @@
     /* flex-basis: content; */
     /* margin-left: 20.5vw; */
     align-self: center;
-    width: 999px;
+    width: 40vw;
 
      /* margin-left: -4;  */
     /* overflow: visible; */
     /* margin-right: 39.3vw; */
+}
+
+.Logo{
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    flex-direction: column;
+    /* overflow: hidden; */
+
+    /* top: 20px; */
+    
+    /* width: 13rem; */
+    left: 40px;
+    top: 30px;
+    height: 15rem;
+    /* display: flex; */
+    /* justify-self: center; */
+    /* flex-flow: nowrap; */
+    /* flex-wrap: nowrap; */
+    /* justify-self: center; */
+    /* align-self: center; */
+
+    
+    
+}
+.LogoSmallScreen{
+    position: fixed;
+    visibility: hidden;
+}
+
+@media screen and (max-width: 900px) {
+    .Estudantes{
+        
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    .BlueDiv{
+        position: fixed;
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+    .FormRectangle{
+        border: solid;
+        border-width: 1cap;
+        border-color: #0071BD;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: max-content;
+        width: max-content;
+        margin-left: 0;
+        padding: 3rem;
+        border-radius: 0.5rem;
+    }
+
+    .LoginDiv{
+        display: flex;
+        flex-direction: column;
+        /* background-color: #0071BD; */
+        /* flex: 1; */
+        justify-content: space-between;
+        min-height: 100vh;
+        min-width: 100vw;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        max-width: strech;
+        max-height: strech;
+    }
+    .LogoSmallScreen{
+        display: flex;
+        position: relative;
+        visibility: visible;
+        /* position: fixed; */
+        overflow: hidden;
+        flex-direction: column;
+        width: 10rem        ;
+        height: 10rem;
+        /* top: 1vh; */
+        }
+
+      
+    
+
 }

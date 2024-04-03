@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import EstudantesPng from "@/components/EstudantesPng";
+import Logo from "@/components/Logo";
 import UserLogo from "@/components/UserLogoPng";
 import LoginCSS from "@/pages/login/Login.module.css";
 import { AppContext } from "@/store";
@@ -12,8 +13,12 @@ const LoginPage = () => {
     {
         // marginLeft: "10px",
         marginTop: "10px",
-        background: "#09870e",
-        borderRadius: "10px"
+        // background: "#09870e",
+        color:"#0071BD",
+        borderRadius: "6px",
+        padding: "4px",
+        fontSize: "10cap",
+        textDecoration: "underline"
     }
     const state = useContext(AppContext);
     function login() {
@@ -25,7 +30,11 @@ const LoginPage = () => {
     }
     const router = useRouter();
     return <div className={LoginCSS.LoginDiv}>
+        <Logo className={LoginCSS.LogoSmallScreen}/>
         <div className={LoginCSS.BlueDiv}>
+            <div className={LoginCSS.Logo}>
+                <Logo />
+            </div>
             <div className={LoginCSS.Estudantes}>
                 <EstudantesPng />
             </div>
@@ -55,7 +64,9 @@ const LoginPage = () => {
                         type="button"
                         style={{
                             backgroundColor: "blue",
-                            borderRadius: "10px"
+                            borderRadius: "6px",
+                            padding: "4px",
+                            fontSize: "10cap"
                         }}
                         action={() => login()}
                     />
