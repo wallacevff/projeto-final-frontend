@@ -21,8 +21,8 @@ const Navbar = (props: NavBarProps) => {
                 )
                 }
             </ul>
-            <ToggleMenu>
-            <a className={NavbarCSS.UserPicture} style={{backgroundImage: `url(${props.picture})`}} ></a>
+            <ToggleMenu className={NavbarCSS.ToggleMenu}>
+                <a className={NavbarCSS.UserPicture} style={{backgroundImage: `url(${props.picture})`}} ></a>
             </ToggleMenu>
             
         </div>
