@@ -1,7 +1,8 @@
 import { CSSProperties } from "react";
 
 interface NavBarProps{
-    itens: {title: string, url: string}[];
+    key?: number;
+    itens: {title: string, url: string, key: number}[];
     logo: JSX.Element;
     style?: CSSProperties;
     picture?: string;

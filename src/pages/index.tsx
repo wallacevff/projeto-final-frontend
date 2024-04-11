@@ -4,7 +4,6 @@ import PanelGroupButton from "@/components/PanelButtonGroup";
 import PanelButton from "@/components/PanelButton";
 import router from "next/router";
 import { use, useContext } from "react";
-import Store, { AppContext } from "@/store";
 // import { withAuthentication } from "@/middlewares/withAuthentication";
 
 // import { useAuth } from "@/contexts/AuthContext";
@@ -15,16 +14,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
     // const auth = useAuth();
-    const state = useContext(AppContext);
     function logoff() {
-        state.setUsername("");
-        state.setPassword("");
         router.push("/login");
     }
 
-    // if (state.username === "" || state.password === "") {
-    //     typeof(window) !== "undefined" && router.push("/login");
-    // }
     return (
         <Layout title="Início"
 

@@ -3,7 +3,6 @@ import EstudantesPng from "@/components/EstudantesPng";
 import Logo from "@/components/Logo";
 import UserLogo from "@/components/UserLogoPng";
 import LoginCSS from "@/pages/login/Login.module.css";
-import { AppContext } from "@/store";
 import { useRouter } from "next/router";
 import { CSSProperties, useContext, useState } from "react";
 const LoginPage = () => {
@@ -20,13 +19,8 @@ const LoginPage = () => {
         fontSize: "10cap",
         textDecoration: "underline"
     }
-    const state = useContext(AppContext);
-    function login() {
-        state.setUsername("asd");
-        state.setPassword(password);
-        console.log(state);
-        console.log(username)
-        // router.push("/");
+    async function  login() {
+        router.push("/");
     }
     const router = useRouter();
     return <div className={LoginCSS.LoginDiv}>

@@ -5,16 +5,23 @@ import Layout from "@/components/Layout";
 import QuillEditor from "@/components/QuillEditor";
 import Button from "@/components/Button";
 import { Grid, Paper, TextField } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { randomInt } from "crypto";
 
 const Forum = () => {
+
+    interface PostResponse {
+        key: number;
+        content: string;
+        created_at: Date;
+    };
+
     interface Post {
         id: number,
         title: string,
         content: string,
         openEditor: boolean,
-        responses: string[],
+        responses: PostResponse[],
         created_at: Date
     }
     const Posts: Post[] = [];
@@ -26,7 +33,22 @@ const Forum = () => {
 
 
     function Responder(postId: number, content: string) {
-
+        var newPostResponse: PostResponse = {
+            key: Math.random(),
+            content: content,
+            created_at: new Date()
+        }
+        setResponseContent("");
+        var postsTmp: Post[] = posts.map(
+            p => {
+                if (p.id === postId) {
+                    p.responses.push(newPostResponse);
+                    p.openEditor = false;
+                }
+                return p;
+            }
+        )
+        setPosts(postsTmp);
     }
 
     function Postar(title: string, content: string) {
@@ -46,11 +68,11 @@ const Forum = () => {
         setContent("");
     }
 
-    const Editor = <QuillEditor value={responseContent} onChange={(e) => setResponseContent(e)} />
-    const ResponseButton =
-        function toggleResponseEditorAndButton() {
-            setResponse(!response);
-        }
+    const Editor = <QuillEditor value={responseContent} onChange={(e) => setResponseContent(e)}  style={{marginTop: "10px"}} />
+
+    function toggleResponseEditorAndButton() {
+        setResponse(!response);
+    }
 
     function responseEditor(id: number) {
         var postsTemp = posts.map(c => {
@@ -61,6 +83,11 @@ const Forum = () => {
         );
         setPosts(postsTemp);
     }
+
+    useEffect(() => {
+        console.log(posts);
+    }, [posts]);
+
 
     return <Layout
         title="Tópico"
@@ -74,10 +101,7 @@ const Forum = () => {
             onChange={(e) => setTitle(e.target.value)}
             style={{ marginBottom: "10px" }}
         />
-        <QuillEditor value={content} onChange={(e) => setContent(e)}
-
-
-        />
+        <QuillEditor value={content} onChange={(e) => setContent(e)} />
         <Button
             style={
                 {
@@ -93,17 +117,21 @@ const Forum = () => {
         <Grid item xs={12}>
             {posts.length > 0 && posts.toReversed().map((post) => (
                 <Paper key={post.id} style={{ padding: '16px', margin: '16px 0' }}>
-                    <h3>{post.title}</h3>
+                    <h3 key={`h3-${post.id}`}>{post.title}</h3>
                     {/* Render HTML content using dangerouslySetInnerHTML */}
-                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
-                    {post.responses.toReversed().map(res =>
-                        <div dangerouslySetInnerHTML={{ __html: res }} />
+                    <div key={`divContent-${post.id}`} dangerouslySetInnerHTML={{ __html: post.content }} />
+                    <small key={`small1s-${post.id}`}>{post.created_at.toLocaleString()}</small>
+                    {post.responses.map(res =>
+                        <Paper style={{ padding: "10px", marginTop: "10px" }}>
+                            <div key={`divRes-${post.id}`} dangerouslySetInnerHTML={{ __html: res.content}} />
+                            <small key={`divResSmall-${post.id}`}>{res.created_at.toLocaleString()}</small>
+                        </Paper>
                     )
 
                     }
 
                     {/* <VideoEmbed content={post.content} /> */}
-                    <small>{post.created_at.toLocaleString()}</small>
+                    
                     {!post.openEditor &&
                         <Button key={post.id}
                             style={
@@ -120,7 +148,13 @@ const Forum = () => {
                         || (post.openEditor &&
                             <div>
                                 {Editor}
-                                <Button style={{ "backgroundColor": "darkblue", "marginTop": "1rem", "display": "flex", "justifyContent": "center", "width": "4rem" }} title="Postar" action={() => Responder(post.id, responseContent)} ></Button>;
+                                <Button
+                                    style={
+                                        { "backgroundColor": "darkblue", "marginTop": "1rem", "display": "flex", "justifyContent": "center", "width": "4rem" }
+                                    }
+                                    title="Postar"
+                                    action={() => Responder(post.id, responseContent)}
+                                />
                             </div>
 
                         )

@@ -5,3 +5,7 @@ interface User {
     email: string;
   }
   
+  interface UserLogin{
+    login: string;
+    password: string;
+  }

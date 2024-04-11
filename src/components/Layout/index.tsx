@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import LayoutCSS from "@/components/Layout/Layout.module.css";
 import NavigationButtonGroup from "../NavigationButtonGroup";
 import ToggleMenu from "../UserPictureDropDownMenu";
-import handler from "@/pages/api/hello";
+import handler from "@/pages/api/login";
 import { use, useEffect, useState } from "react";
 
 
@@ -29,8 +29,8 @@ const Layout = (props: any) => {
         <div className={LayoutCSS.Layout}>
             <div>
                 <Navbar logo=<Logo navBar/> itens={[
-                    { title: "Home", url: "/" },
-                    { title: "Meus cursos", url: "/curso" },
+                    { title: "Home", url: "/", key: 1},
+                    { title: "Meus cursos", url: "/curso", key: 2 },
                 ]}
                 picture={user?.picture}
                 />
