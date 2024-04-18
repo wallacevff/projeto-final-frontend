@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <Layout title="Meus Cursos"
         buttons={[
-            <BackButton />
+            <BackButton key={"back-1"}/>
         ]}
         >
             <Cards style={{

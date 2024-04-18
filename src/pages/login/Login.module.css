@@ -125,6 +125,7 @@
     /* flex-basis: content; */
     /* margin-left: 20.5vw; */
     align-self: center;
+    top: 2vh;
     width: 40vw;
 
     /* margin-left: -4;  */
@@ -142,9 +143,9 @@
     /* top: 20px; */
 
     /* width: 13rem; */
-    left: 40px;
-    top: 30px;
-    height: 15rem;
+    left: 10vw;
+    top: 8vh;
+    height: 30vh;
     /* display: flex; */
     /* justify-self: center; */
     /* flex-flow: nowrap; */
@@ -161,7 +162,7 @@
     visibility: hidden;
 }
 
-@media screen and (max-width: 1421px) {
+@media screen and (max-width: 1265px) {
     .Estudantes {
         visibility: hidden;
         width: 0;

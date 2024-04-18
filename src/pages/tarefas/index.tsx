@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 const Tarefas = () => {
 
     return <Layout title="Tarefas"
-    buttons={[<BackButton />]}>
+    buttons={[<BackButton key={"back-1"}/>]}>
 
     </Layout>
 }

@@ -12,7 +12,7 @@ const CursoId = () => {
     return (
         <Layout title={`Turma: ${id}`}
             buttons={[
-                <BackButton />
+                <BackButton key={"back-1"}/>
             ]}
         >
             <PanelGroupButton>

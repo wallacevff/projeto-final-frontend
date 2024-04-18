@@ -40,10 +40,11 @@ const Forum = () => {
 
     return <Layout
         title="Forum"
-        buttons={[<BackButton />, <CreateButton style={{
+        buttons={[<BackButton key={"back-1"}/>, <CreateButton style={{
             marginLeft: "0.8rem"
         }}
             action={toggleModal}
+            key={"create-1"}
         />]}
     >
         <ModalCreateForumTopic

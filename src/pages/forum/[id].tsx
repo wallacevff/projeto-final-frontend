@@ -91,7 +91,7 @@ const Forum = () => {
 
     return <Layout
         title="Tópico"
-        buttons={[<BackButton />]}
+        buttons={[<BackButton key={"back-1"}/>]}
     >
         <TextField
             label="Título"

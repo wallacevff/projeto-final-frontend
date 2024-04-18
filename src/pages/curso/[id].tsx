@@ -13,7 +13,7 @@ const CursoId = () => {
     return (
         <Layout title={`Curso: ${id}`}
             buttons={[
-                <BackButton />
+                <BackButton key={"back-1"}/>
             ]}>
 
             <Cards

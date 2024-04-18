@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Button from "../Button"
+import React from "react";
 
 const NavigationButtonGroup = (props: any) => {
     const router = useRouter();
@@ -14,7 +15,12 @@ const NavigationButtonGroup = (props: any) => {
             ...props?.style
         }}>
 
-           {props.children}
+           {/* {props.children} */}
+           {props.children.length && 
+                props.children.map((el: any, i: number) => 
+                    React.cloneElement(el, {key : `buttonNav-${i}`})
+                )
+           }
 
         </div>
     );

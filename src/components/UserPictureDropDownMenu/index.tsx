@@ -41,8 +41,8 @@ export default function ToggleMenu(props: any) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}><Link href={"./profile"}>Perfil</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link href={"./login"}>Logoff</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link href={"/profile"} key={"profile"}>Perfil</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link href={"/login"} key={"logoff"}>Logoff</Link></MenuItem>
       </Menu>
     </div>
   );
