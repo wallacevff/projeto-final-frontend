@@ -33,7 +33,7 @@ export default function Home() {
                     title="Meu Perfil"
                     color="#FC6736"
                     colorHove="#bf522e"
-                    action={() => router.push("/")}
+                    action={() => router.push("/profile")}
                 ></PanelButton>
                 <PanelButton
                     title="Logoff"
