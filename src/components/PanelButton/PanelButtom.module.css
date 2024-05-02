@@ -1,5 +1,11 @@
 .PanelButton{
     height: 18.5vw;
     font-size: 5vw;
-    border-radius: 20%;
+    /* border-radius: 0%; */
+}
+
+@media screen and (max-width: 1265px){
+    .PanelButton{
+        margin-top: 10px;
+    }
 }

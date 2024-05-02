@@ -1,14 +1,8 @@
 
 import React from "react";
-
+import PanelButtonCSS from "./PanelButtonGroup.module.css";
 const PanelGroupButton = (props: any) =>
-    <div style={{
-        marginTop: "calc(100vh * 0.15)",
-        display: "flex",
-        width: "80vw",
-        // flex: 1,
-        justifyContent: "space-between"
-    }}>
+    <div className={PanelButtonCSS.Group} >
         {props.children.length && 
                 props.children.map((el: any, i: number) => 
                     React.cloneElement(el, {key : `buttonNav-${i}`})
