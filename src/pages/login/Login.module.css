@@ -115,7 +115,7 @@
     position: fixed;
     /* position: relative; */
     left: 20.5vw;
-    top: 5vh;
+    top: calc( 4rem + 5vh);
     overflow: hidden;
     flex-direction: column;
     /* position: -webkit-sticky; */
@@ -125,7 +125,7 @@
     /* flex-basis: content; */
     /* margin-left: 20.5vw; */
     align-self: center;
-    top: 2vh;
+    /* top: 2vh; */
     width: 40vw;
 
     /* margin-left: -4;  */

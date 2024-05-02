@@ -27,7 +27,7 @@ export default function Home() {
                     title="Criar Curso"
                     color="#070F2B"
                     colorHove="#020614"
-                    action={() => router.push("/")}
+                    action={() => router.push("/curso/criar")}
                 ></PanelButton>
                 <PanelButton
                     title="Meu Perfil"

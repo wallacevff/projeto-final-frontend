@@ -1,0 +1,38 @@
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    width: stretch;
+    margin: 30px;
+    
+}
+
+.border{
+    border: solid;
+    border-width: 3cap;
+    border-color: #0071BD;
+    padding: 100px;
+}
+.formulario .formGroup{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+.formulario .formGroup label{
+    display: flex;
+    font-size: 39px;
+    font-weight: bold;
+    flex-direction: column;
+    width: stretch;
+}
+
+.formulario .formGroup input{
+    display: flex;
+    width: 30rem;
+    height: 40px;
+    font-size: 39px;
+    color: blue;
+}

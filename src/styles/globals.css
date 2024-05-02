@@ -3,6 +3,29 @@
 @tailwind components;
 @tailwind utilities;
 
+
+input {
+  border-style: solid;
+  border-color: #577B8D;
+  border-width: 1cap;
+  padding: 3px;
+  border-radius: 3px;
+  width: 300px;
+  font-size: 8cap;
+}
+
+label {
+  /* border-style: solid; */
+  /* border-color: #577B8D; */
+  /* border-width: 1cap; */
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 9cap;
+  font-weight: 100;
+  color: #577B8D;
+  /* color: #0071BD; */
+}
+
 /* @import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap'); */
 /* :root {
   --foreground-rgb: 0, 0, 0;
