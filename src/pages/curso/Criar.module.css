@@ -13,7 +13,7 @@
     border: solid;
     border-width: 3cap;
     border-color: #0071BD;
-    padding: 100px;
+    padding: 5rem;
 }
 .formulario .formGroup{
     display: flex;
@@ -23,7 +23,7 @@
 
 .formulario .formGroup label{
     display: flex;
-    font-size: 39px;
+    font-size: 20px;
     font-weight: bold;
     flex-direction: column;
     width: stretch;
@@ -33,6 +33,20 @@
     display: flex;
     width: 30rem;
     height: 40px;
-    font-size: 39px;
+    font-size: 20px;
+    padding: 2cap;
     color: blue;
+}
+
+@media screen and (max-width: 1265px) {
+
+    .formulario .formGroup input{
+        display: flex;
+        width: 50vw;
+        height: 40px;
+        font-size: 20px;
+        padding: 2cap;
+        color: blue;
+    }
+
 }
