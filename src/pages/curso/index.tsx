@@ -20,28 +20,28 @@ export default function Home() {
                 marginTop: "calc(100vh * 0.15)"
             }
             }>
-                <Card title="Curso de Inglês" link="curso/1">
+                <Card title="Curso de Inglês" link="curso/curso/1">
                     <CursoInfo
                         NroTurmas={10}
                         NroAlunos={100}
                         NroTarefas={0}
                     />
                 </Card>
-                <Card title="Curso de Alemão" link="curso/2">
+                <Card title="Curso de Alemão" link="curso/curso/2">
                     <CursoInfo
                         NroTurmas={1}
                         NroAlunos={20}
                         NroTarefas={12}
                     />
                 </Card>
-                <Card title="Curso de Inglês" link="curso/3">
+                <Card title="Curso de Inglês" link="curso/curso/3">
                     <CursoInfo
                         NroTurmas={1}
                         NroAlunos={20}
                         NroTarefas={12}
                     />
                 </Card>
-                <Card title="Curso de Inglês" link="curso/4">
+                <Card title="Curso de Inglês" link="curso/curso/4">
                     <CursoInfo
                         NroTurmas={1}
                         NroAlunos={20}
@@ -55,7 +55,7 @@ export default function Home() {
                         NroTarefas={12}
                     />
                 </Card>
-                <Card title="Curso de Inglês" link="curso/6">
+                <Card title="Curso de Inglês" link="curso/curso/6">
                     <CursoInfo
                         NroTurmas={1}
                         NroAlunos={20}
