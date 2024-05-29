@@ -6,10 +6,20 @@ import Cards from "@/components/Cards";
 import CursoInfo from "@/components/CursoInfo";
 import NavigationButtonGroup from "@/components/NavigationButtonGroup";
 import BackButton from "@/components/BackButton";
+import { useEffect } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import router from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+    const {user} = useAuth();
+    useEffect(() => {
+        if (!user) {
+          router.push('/login');
+        }
+      }, [user, router]);
+
     return (
         <Layout title="Meus Cursos"
         buttons={[
