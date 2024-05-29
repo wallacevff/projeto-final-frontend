@@ -1,5 +1,7 @@
 import Layout from '@/components/Layout';
+import { useAuth } from '@/contexts/AuthContext';
 import { Avatar, Grid, Link, Paper, Typography } from '@mui/material';
+import router from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 interface ProfilePageProps {
@@ -7,6 +9,14 @@ interface ProfilePageProps {
 }
 
 const ProfilePage: React.FC<ProfilePageProps> = () => {
+  const userLogged = useAuth();
+  useEffect(() => {
+      if (!userLogged.user) {
+        router.push('/login');
+      }
+    }, [userLogged.user, router]);
+
+  
     const [user, setUser] = useState<User>();
     useEffect(() => {
         // Fetch user data from API

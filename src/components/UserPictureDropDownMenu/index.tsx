@@ -4,8 +4,11 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import UserPictureDropDownMenuCSS from "./UserPictureDropDownMenu.module.css";
 import Link from 'next/link';
+import { useAuth } from '@/contexts/AuthContext';
+import router from 'next/router';
 
 export default function ToggleMenu(props: any) {
+  const {logout} = useAuth();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -14,12 +17,16 @@ export default function ToggleMenu(props: any) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  function logoff() {
+    logout();
+    router.push("/login");
+  }
   return (
     <div style={{
-        display: "flex",
-        flex: 1,
-        width: "fit-content"}}>
+      display: "flex",
+      flex: 1,
+      width: "fit-content"
+    }}>
       <Button
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
@@ -27,8 +34,9 @@ export default function ToggleMenu(props: any) {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         style={{
-            display: "flex",
-            width: "0"}}
+          display: "flex",
+          width: "0"
+        }}
       >
         {props.children}
       </Button>
@@ -42,7 +50,7 @@ export default function ToggleMenu(props: any) {
         }}
       >
         <MenuItem onClick={handleClose}><Link href={"/profile"} key={"profile"}>Perfil</Link></MenuItem>
-        <MenuItem onClick={handleClose}><Link href={"/login"} key={"logoff"}>Logoff</Link></MenuItem>
+        <MenuItem onClick={handleClose}><button onClick={logoff} key={"logoff"}>Logoff</button></MenuItem>
       </Menu>
     </div>
   );
