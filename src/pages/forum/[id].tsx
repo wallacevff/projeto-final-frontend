@@ -14,6 +14,8 @@ const Forum = () => {
         key: number;
         content: string;
         created_at: Date;
+        user_name: string;
+        user_picture: string;
     };
 
     interface Post {
@@ -22,6 +24,8 @@ const Forum = () => {
         content: string,
         openEditor: boolean,
         responses: PostResponse[],
+        user_name: string,
+        user_picture: string,
         created_at: Date
     }
     const Posts: Post[] = [];
@@ -36,7 +40,9 @@ const Forum = () => {
         var newPostResponse: PostResponse = {
             key: Math.random(),
             content: content,
-            created_at: new Date()
+            created_at: new Date(),
+            user_name: "Wallace Vidal",
+            user_picture: "https://wallvff.com.br/perfil.jpg"
         }
         setResponseContent("");
         var postsTmp: Post[] = posts.map(
@@ -59,7 +65,9 @@ const Forum = () => {
             content: content,
             openEditor: false,
             responses: [],
-            created_at: new Date()
+            created_at: new Date(),
+            user_name: "Wallace Vidal",
+            user_picture: "https://wallvff.com.br/perfil.jpg"
         }
         console.log(post);
         postsTemp.push(post);
@@ -68,7 +76,7 @@ const Forum = () => {
         setContent("");
     }
 
-    const Editor = <QuillEditor value={responseContent} onChange={(e) => setResponseContent(e)}  style={{marginTop: "10px"}} />
+    const Editor = <QuillEditor value={responseContent} onChange={(e) => setResponseContent(e)} style={{ marginTop: "10px" }} />
 
     function toggleResponseEditorAndButton() {
         setResponse(!response);
@@ -91,7 +99,7 @@ const Forum = () => {
 
     return <Layout
         title="Tópico"
-        buttons={[<BackButton key={"back-1"}/>]}
+        buttons={[<BackButton key={"back-1"} />]}
     >
         <TextField
             label="Título"
@@ -121,17 +129,57 @@ const Forum = () => {
                     {/* Render HTML content using dangerouslySetInnerHTML */}
                     <div key={`divContent-${post.id}`} dangerouslySetInnerHTML={{ __html: post.content }} />
                     <small key={`small1s-${post.id}`}>{post.created_at.toLocaleString()}</small>
+                    <div style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-end",
+                        alignContent: "flex-end",
+                        justifyContent: "flex-end"
+                    }}>
+                        <img title="user-pic" src={post.user_picture} style={{
+                            display: "flex",
+                            borderRadius: "100%",
+                            width: "30px",
+                        }} />
+                        <span
+                            style={{
+                                display: "flex",
+                                fontSize: "10px"
+                            }}
+                        >{post.user_name}</span>
+                    </div>
                     {post.responses.map(res =>
                         <Paper style={{ padding: "10px", marginTop: "10px" }}>
-                            <div key={`divRes-${post.id}`} dangerouslySetInnerHTML={{ __html: res.content}} />
+                            <div key={`divRes-${post.id}`} dangerouslySetInnerHTML={{ __html: res.content }} />
                             <small key={`divResSmall-${post.id}`}>{res.created_at.toLocaleString()}</small>
+                            <div style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "flex-end",
+                        alignContent: "flex-end",
+                        justifyContent: "flex-end"
+                    }}>
+                        <img title="user-pic" src={post.user_picture} style={{
+                            display: "flex",
+                            borderRadius: "100%",
+                            width: "30px",
+                        }} />
+                        <span
+                            style={{
+                                display: "flex",
+                                fontSize: "10px"
+                            }}
+                        >{post.user_name}</span>
+                    </div>
                         </Paper>
                     )
 
                     }
 
                     {/* <VideoEmbed content={post.content} /> */}
-                    
+
                     {!post.openEditor &&
                         <Button key={post.id}
                             style={

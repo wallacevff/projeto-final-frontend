@@ -8,8 +8,8 @@ import { useRouter } from "next/router";
 import { CSSProperties, useContext, useState } from "react";
 const LoginPage = () => {
     const { login } = useAuth();
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("admin");
+    const [password, setPassword] = useState("@admin");
     const [error, setError] = useState('');
     const styleForCriarUsuarioButton: CSSProperties =
     {
