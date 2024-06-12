@@ -12,8 +12,12 @@ const CreateButton = (props: ButtonProps) => {
             ...props?.style,
             // display: "flex",
             // flex: 1,
-            width: "15vh",
-            backgroundColor: "#3DD506",
+            color: "#3DD506",
+            textDecorationLine: "underline",
+            // display: "flex",
+            // flex: 1,
+            // width: "15vw",
+            // backgroundColor: "#FF9130",
             fontSize: "3vh",
             fontWeight: "1000"
         }}

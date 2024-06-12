@@ -6,11 +6,12 @@
     width: -webkit-fill-available;
     background: #0071BD;
     color: #FFF6E9;
-    height: 3.5rem;
+    height: 4.5rem;
     
 }
 .NavbarRoot ul{
     display: flex;
+    justify-content: center;
     /* justify-content: space-between; */
     width: -webkit-fill-available;
 }

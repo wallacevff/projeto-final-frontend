@@ -9,31 +9,52 @@
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    background-color: #3F82A7;
+    /* background-color: #3F82A7; */
+    border: 1px solid #ccc;
     border-radius: 10px;
     font-weight: 1000;
-    color: white;
+    /* color: white; */
     margin: 10px;
     /* overflow: hidden; */
+    padding: 20px;
+    margin: 10px;
+    min-width: max-content;
+    width: 12300px;
+    max-width: 30vw;
 }
 
 .Card .Header{
     display: flex;
     padding: 10px;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
     background-color: inherit;
+    font-weight: 700;
+    color: #0071BD;
 }
 .Card .Body{
     /* display: flex; */
     /* flex-direction: column; */
     /* flex: 1; */
-    background-color: gray;
+    /* background-color: gray; */
     /* min-width: 100%; */
     min-height: 100px;
     max-height: max-content;
     padding: 10px;
+    font-weight: 500;
     /* overflow: hidden; */
     
 }
+
+.ProgressBar {
+    background: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  
+  .Progress {
+    height: 8px;
+    background: #0057b7;
+  }

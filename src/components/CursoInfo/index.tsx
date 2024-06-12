@@ -1,5 +1,6 @@
+import style from "@/components/CursoInfo/CursoInfo.module.css";
 export default (props: any) =>
-    <div>
+    <div className={style.CursoInfo}>
         {typeof (props.NroTurmas) !== "undefined" &&
             <div>
                 Nro. de Turmas: {props.NroTurmas}

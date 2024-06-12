@@ -26,10 +26,7 @@ export default function Home() {
             <BackButton key={"back-1"}/>
         ]}
         >
-            <Cards style={{
-                marginTop: "calc(100vh * 0.15)"
-            }
-            }>
+            <Cards>
                 <Card title="Curso de Inglês" link="curso/curso/1">
                     <CursoInfo
                         NroTurmas={10}

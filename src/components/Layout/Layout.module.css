@@ -4,31 +4,33 @@
 }
 
 .Layout .Header{
+    margin-left: 30px;
     display: flex;
-    justify-content: center;
-    margin-top: calc(3.5rem + 2.4rem);
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10px;
     /* margin-top: 2.4rem; */
-    color: blue;
+    /* color: blue; */
     width: stretch;
     min-height: max-content;
-    margin-bottom: 30px;
     /* font-weight: 1000; */
 }
-.Layout .Header h1{
+.Layout .Header h2{
     display: flex;
+    color: #0071BD;
     flex: 1;
-    justify-content: center;
-    margin-top: 2vw;
-    font-size: 6vw;
+    justify-content: flex-start;
+    font-size: 1.4rem;
     /* font-stretch: expanded; */
-    font-weight: 1000;
+    font-weight: 500;
     /* height: 100px; */
 }
 .Layout .Body{
+    margin-left: 30px;
     display: flex;
-    flex-direction: inherit;
+    flex-direction: column;
     flex: 1;
-    align-content: center;
+    /* align-content: center; */
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }

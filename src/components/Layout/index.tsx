@@ -30,20 +30,22 @@ const Layout = (props: any) => {
             <div>
                 <Navbar logo=<Logo navBar/> itens={[
                     { title: "Home", url: "/", key: 1},
-                    { title: "Meus cursos", url: "/curso", key: 2 },
+                    { title: "Cursos", url: "/curso", key: 2 },
+                    { title: "Teste", url: "/", key: 3 },
                 ]}
                 picture={user?.picture}
                 />
             </div>
-            <div className={LayoutCSS.Header}>
-                <h1>{props.title}</h1>
-            </div>
             {typeof (props.buttons) !== "undefined" && <NavigationButtonGroup style={{
-                marginTop: "2vh"
+                marginTop: "calc(3.5rem + 2.4rem)"
             }}>
                 {props.buttons}
             </NavigationButtonGroup>
             }
+            <div className={LayoutCSS.Header}>
+                <h2><b>{props.title}</b></h2>
+            </div>
+           
             <div className={LayoutCSS.Body}>
                 {props.children}
                 
