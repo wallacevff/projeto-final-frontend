@@ -98,17 +98,10 @@ button{
     @apply text-blue-600 underline;
   }
 }
-
+body{
+  margin: unset;
+  padding: unset;
+  font-family: ovo;
+}
 a{
-text-decoration: unset;font-style: unset;color: unset; margin: 0;}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-}
-
-#root {
-  display: flex;
-  justify-content: center;
-}
-            
+text-decoration: unset;font-style: unset;color: unset;}
