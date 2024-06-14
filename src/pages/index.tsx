@@ -5,6 +5,7 @@ import PanelButton from "@/components/PanelButton";
 import router, { useRouter } from "next/router";
 import { use, useContext, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import Board from "@/components/Board";
 // import { withAuthentication } from "@/middlewares/withAuthentication";
 
 // import { useAuth } from "@/contexts/AuthContext";
@@ -24,33 +25,24 @@ export default function Home() {
     }
     useEffect(() => {
         if (!user) {
-          router.push('/login');
+            router.push('/login');
         }
-      }, [user, router]);
+    }, [user, router]);
     return (
         <Layout title="Início"
 
-        >
-            <PanelGroupButton>
-                <PanelButton
-                    title="Criar Curso"
-                    color="#070F2B"
-                    colorHove="#020614"
-                    action={() => router.push("/curso/criar")}
-                ></PanelButton>
-                <PanelButton
-                    title="Meu Perfil"
-                    color="#FC6736"
-                    colorHove="#bf522e"
-                    action={() => router.push("/profile")}
-                ></PanelButton>
-                <PanelButton
-                    title="Logoff"
-                    color="#D71313"
-                    colorHove="#691111"
-                    action={() => logoff()}
-                ></PanelButton>
-            </PanelGroupButton>
+        ><div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+        }}>
+                <Board title="ME AJUDA AI" content='Bem-vindo(a) ao ME AJUDA AI, a sua plataforma de aprendizado online!'
+                    style={{
+                        marginTop: "calc(4.5rem + 30px)",
+                        padding: "30px"
+                    }}
+                />
+            </div>
         </Layout>
     );
 }
