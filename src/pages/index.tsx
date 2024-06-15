@@ -6,6 +6,7 @@ import router, { useRouter } from "next/router";
 import { use, useContext, useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import Board from "@/components/Board";
+import HomeCSS from "@/styles/home.module.css";
 // import { withAuthentication } from "@/middlewares/withAuthentication";
 
 // import { useAuth } from "@/contexts/AuthContext";
@@ -29,13 +30,9 @@ export default function Home() {
         }
     }, [user, router]);
     return (
-        <Layout title="Início"
+        <Layout title=""
 
-        ><div style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center"
-        }}>
+        ><div className={HomeCSS.HomeContainer}>
                 <Board title="ME AJUDA AI" content='Bem-vindo(a) ao ME AJUDA AI, a sua plataforma de aprendizado online!'
                     style={{
                         marginTop: "calc(4.5rem + 30px)",

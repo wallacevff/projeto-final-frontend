@@ -6,7 +6,7 @@
     width: -webkit-fill-available;
     background: #0071BD;
     color: #FFF6E9;
-    height: 4.5rem;
+    height: var(--navbar-height);
     
 }
 .NavbarRoot ul{

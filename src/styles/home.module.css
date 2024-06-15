@@ -1,0 +1,7 @@
+.HomeContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: stretch;
+    /* min-height: calc(100vh - var(--footer-height) - var(--navbar-height)); */
+}

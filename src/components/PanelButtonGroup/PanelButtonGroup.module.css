@@ -13,6 +13,7 @@
         flex-direction: column;
         height: 18.5vw;
         font-size: 5vw;
+        margin-bottom: var(--margin-footer);
         /* border-radius: 0%; */
     }
 }

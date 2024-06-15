@@ -1,0 +1,30 @@
+
+.Footer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #0071BD;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    min-height: var(--footer-height);
+}
+.Logo{
+    align-self: center;
+    width: 6.2rem;
+}
+
+.TextFooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: stretch;
+}
+
+.TextFooterLogo{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: stretch;
+}
