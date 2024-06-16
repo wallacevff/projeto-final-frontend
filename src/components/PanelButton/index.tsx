@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 import Button from "../Button"
 import PanelButtonCSS from "./PanelButtom.module.css";
-const PanelButton = (props: any) => {
+
+interface PanelButtonProps{
+    color?: string;
+    style?: CSSProperties,
+    colorHove?: string,
+    action?: Function,
+    title?: string, 
+}
+
+const PanelButton = (props: PanelButtonProps) => {
     const [color, setColor] = useState(props.color);
     let style = {
-        backgroundColor: color
+        backgroundColor: color,
+        ...props.style
     }
     return <Button style={style}
         className={PanelButtonCSS.PanelButton} type="button" title={props.title}
