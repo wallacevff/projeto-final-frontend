@@ -8,6 +8,7 @@
     align-items: center;
     color: white;
     min-height: var(--footer-height);
+    width: -webkit-fill-available;
 }
 .Logo{
     align-self: center;
@@ -19,12 +20,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: stretch;
+    text-align: center;
+    width: -webkit-fill-available;
 }
 
 .TextFooterLogo{
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
-    width: stretch;
+    width: -webkit-fill-available;
 }

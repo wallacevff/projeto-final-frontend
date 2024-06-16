@@ -35,8 +35,10 @@ export default function Home() {
         ><div className={HomeCSS.HomeContainer}>
                 <Board title="ME AJUDA AI" content='Bem-vindo(a) ao ME AJUDA AI, a sua plataforma de aprendizado online!'
                     style={{
-                        marginTop: "calc(4.5rem + 30px)",
-                        padding: "30px"
+                        marginTop: "calc(var(--navbar-height) + 30px)",
+                        padding: "30px",
+                        wordWrap: "break-word"
+                        
                     }}
                 />
             </div>

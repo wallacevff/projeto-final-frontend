@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     background-color: #0071BD;
-    min-width: max-content;
-    width: max-content;
+    /* min-width: max-content; */
+    /* width: max-content; */
     max-width: 100vw;
     border-radius: 10px;
 }
@@ -41,5 +41,9 @@
 }
 .Content{
     display: flex;
-    color: white;
+    flex: 1;
+    align-content: center;
+    text-align: center;
+    /* word-break: break-all; */
+    color: white;;
 }

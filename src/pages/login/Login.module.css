@@ -25,7 +25,8 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: fit-content;
+    min-height: fit-content;
+    height: 80vh;
     max-height: 800px;
     max-width: max-content;
     margin-left: 24vw;
