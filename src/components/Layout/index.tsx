@@ -5,8 +5,21 @@ import LayoutCSS from "@/components/Layout/Layout.module.css";
 import NavigationButtonGroup from "../NavigationButtonGroup";
 import ToggleMenu from "../UserPictureDropDownMenu";
 import handler from "@/pages/api/login";
-import { use, useEffect, useState } from "react";
+import { CSSProperties, ReactNode, use, useEffect, useState } from "react";
 import { Footer } from "../Footer";
+
+
+interface LayoutProps{
+    title?: string;
+    user?: User;
+    children?: ReactNode;
+    containerStyle?: CSSProperties;
+    layoutStyle?: CSSProperties;
+    layoutNavigationButtonGroupStyle?: CSSProperties;
+    layoutHeaderStyle?: CSSProperties;
+    layoutBodyStyle?: CSSProperties;
+    buttons?: ReactNode;
+}
 
 
 const VerifyIfIsArray = (varItem: any) => {
@@ -16,7 +29,7 @@ const VerifyIfIsArray = (varItem: any) => {
     return false;
 }
 
-const Layout = (props: any) => {
+const Layout = (props: LayoutProps) => {
     const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
@@ -27,8 +40,8 @@ const Layout = (props: any) => {
             .catch(error => console.error('Error fetching user data:', error));
     }, []);
     return (
-        <div className={LayoutCSS.LayoutContainer}>
-            <div className={LayoutCSS.Layout}>
+        <div className={LayoutCSS.LayoutContainer} style={props.containerStyle}>
+            <div className={LayoutCSS.Layout} style={props.layoutStyle}>
                     <Navbar logo=<Logo navBar /> itens={[
                         { title: "Home", url: "/", key: 1 },
                         { title: "Cursos", url: "/curso", key: 2 },
@@ -38,16 +51,21 @@ const Layout = (props: any) => {
                     />
                 
                 {typeof (props.buttons) !== "undefined" && <NavigationButtonGroup style={{
-                    marginTop: "calc(var(--navbar-height) + 10px)"
+                    marginTop: "calc(var(--navbar-height) + 10px)",
+                    ...props.layoutNavigationButtonGroupStyle
                 }}>
                     {props.buttons}
                 </NavigationButtonGroup>
                 }
-                <div className={LayoutCSS.Header}>
+                <div className={LayoutCSS.Header}
+                    style={props.layoutHeaderStyle}
+                >
                     <h2><b>{props.title}</b></h2>
                 </div>
 
-                <div className={LayoutCSS.Body}>
+                <div className={LayoutCSS.Body}
+                    style={props.layoutBodyStyle}
+                >
                     {props.children}
                 </div>
 
