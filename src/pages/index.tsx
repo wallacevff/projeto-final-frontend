@@ -31,11 +31,10 @@ export default function Home() {
     }, [user, router]);
     return (
         <Layout title=""
-
         ><div className={HomeCSS.HomeContainer}>
                 <Board title="ME AJUDA AI" content='Bem-vindo(a) ao ME AJUDA AI, a sua plataforma de aprendizado online!'
                     style={{
-                        marginTop: "calc(var(--navbar-height) + 30px)",
+                        marginTop: "calc(var(--navbar-height) * 2 + 30px)",
                         padding: "30px",
                         wordWrap: "break-word"
                         
