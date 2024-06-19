@@ -18,7 +18,7 @@ const CursoId = () => {
 
             <Cards
                 style={{
-                    marginTop: "calc(100vh * 0.15)"
+                    // marginTop: "calc(100vh * 0.15)"
                 }}
             >
                 <Card title="Turma 1" link="/turma/1">
