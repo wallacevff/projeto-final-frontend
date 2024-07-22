@@ -1,9 +1,9 @@
 .main{
     display: flex;
     width: var(--sidebar-width);
-    margin-left: calc((-1) * var(--container-margin));
-    margin-top: var(--navbar-height );
-    height:calc(100vh - var(--footer-height) - var(--navbar-height));
+    /* margin-left: calc((-1) * var(--container-margin)); */
+    /* margin-top: var(--navbar-height ); */
+    /* height:calc(100vh - var(--footer-height) - var(--navbar-height)); */
     background-color: var(--blue-color);
 }
 
