@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 import { IconeFechar } from "../Icons/Icones";
 
 const ModalCreateForumTopic = (props: any) => {
@@ -11,6 +11,10 @@ const ModalCreateForumTopic = (props: any) => {
             dialogRef.current?.close();
         }
     }, [props.showDialog]);
+
+    const style : CSSProperties = {
+
+    }
 
     const dialog: JSX.Element | null = props.showDialog === "y" ?
         (

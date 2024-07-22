@@ -7,9 +7,10 @@ import ToggleMenu from "../UserPictureDropDownMenu";
 import handler from "@/pages/api/login";
 import { CSSProperties, ReactNode, use, useEffect, useState } from "react";
 import { Footer } from "../Footer";
+import SideBar from "../SideBar";
 
 
-interface LayoutProps{
+interface LayoutProps {
     title?: string;
     user?: User;
     children?: ReactNode;
@@ -19,6 +20,7 @@ interface LayoutProps{
     layoutHeaderStyle?: CSSProperties;
     layoutBodyStyle?: CSSProperties;
     buttons?: ReactNode;
+    sidebar?: boolean;
 }
 
 
@@ -39,9 +41,10 @@ const Layout = (props: LayoutProps) => {
             .then(data => setUser(data))
             .catch(error => console.error('Error fetching user data:', error));
     }, []);
-    return (
-        <div className={LayoutCSS.LayoutContainer} style={props.containerStyle}>
-            <div className={LayoutCSS.Layout} style={props.layoutStyle}>
+    if (!props.sidebar) {
+        return (
+            <div className={LayoutCSS.LayoutContainer} style={props.containerStyle}>
+                <div className={LayoutCSS.Layout} style={props.layoutStyle}>
                     <Navbar logo=<Logo navBar /> itens={[
                         { title: "Home", url: "/", key: 1 },
                         { title: "Cursos", url: "/curso", key: 2 },
@@ -49,31 +52,67 @@ const Layout = (props: LayoutProps) => {
                     ]}
                         picture={user?.picture}
                     />
-                
-                {typeof (props.buttons) !== "undefined" && <NavigationButtonGroup style={{
+
+                    {typeof (props.buttons) !== "undefined" && <NavigationButtonGroup style={{
+                        marginTop: "calc(var(--navbar-height) + 10px)",
+                        ...props.layoutNavigationButtonGroupStyle
+                    }}>
+                        {props.buttons}
+                    </NavigationButtonGroup>
+                    }
+                    <div className={LayoutCSS.Header}
+                        style={props.layoutHeaderStyle}
+                    >
+                        <h2><b>{props.title}</b></h2>
+                    </div>
+
+                    <div className={LayoutCSS.Body}
+                        style={props.layoutBodyStyle}
+                    >
+                        {props.children}
+                    </div>
+
+                </div>
+                <Footer>
+                </Footer>
+            </div>
+
+        );
+    }
+    else {
+        return <div className={LayoutCSS.LayoutContainer} style={props.containerStyle}>
+            <div className={LayoutCSS.Layout} style={props.layoutStyle}>
+                <Navbar logo=<Logo navBar /> itens={[
+                    { title: "Home", url: "/", key: 1 },
+                    { title: "Cursos", url: "/curso", key: 2 },
+                    { title: "Teste", url: "/", key: 3 },
+                ]}
+                    picture={user?.picture}
+                />
+
+                {/* {typeof (props.buttons) !== "undefined" && <NavigationButtonGroup style={{
                     marginTop: "calc(var(--navbar-height) + 10px)",
                     ...props.layoutNavigationButtonGroupStyle
                 }}>
                     {props.buttons}
                 </NavigationButtonGroup>
-                }
-                <div className={LayoutCSS.Header}
+                } */}
+                {/* <div className={LayoutCSS.Header}
                     style={props.layoutHeaderStyle}
                 >
                     <h2><b>{props.title}</b></h2>
-                </div>
+                </div> */}
 
                 <div className={LayoutCSS.Body}
                     style={props.layoutBodyStyle}
                 >
                     {props.children}
                 </div>
-
             </div>
             <Footer>
             </Footer>
         </div>
-    );
+    }
 }
 
 export default Layout;

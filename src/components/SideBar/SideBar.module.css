@@ -1,0 +1,27 @@
+.main{
+    display: flex;
+    width: var(--sidebar-width);
+    margin-left: calc((-1) * var(--container-margin));
+    margin-top: var(--navbar-height );
+    height:calc(100vh - var(--footer-height) - var(--navbar-height));
+    background-color: var(--blue-color);
+}
+
+.main .sidebar{
+    margin-top: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* background-color: #f2f2f2; */
+    /* border-right: 1px solid #ddd; */
+}
+.main .sidebar li{
+    height: 3rem;
+    color: white;
+    text-align: center;
+    align-content: center;
+    border: 1cap;
+    border-style: solid;
+    margin-bottom: 4px;
+}
