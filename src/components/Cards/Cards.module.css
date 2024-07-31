@@ -1,8 +1,9 @@
 .Cards{
     display: flex;
-    flex: 1;
+    flex-direction: row;
+    /* flex: 1; */
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-left: -10px;
-    margin-bottom: var(--margin-footer);
+    /* margin-bottom: var(--margin-footer); */
 }

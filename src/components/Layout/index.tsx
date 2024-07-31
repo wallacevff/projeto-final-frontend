@@ -44,17 +44,17 @@ const Layout = (props: LayoutProps) => {
     if (!props.sidebar) {
         return (
             <div className={LayoutCSS.LayoutContainer} style={props.containerStyle}>
-                <div className={LayoutCSS.Layout} style={props.layoutStyle}>
-                    <Navbar logo=<Logo navBar /> itens={[
-                        { title: "Home", url: "/", key: 1 },
-                        { title: "Cursos", url: "/curso", key: 2 },
-                        { title: "Teste", url: "/", key: 3 },
-                    ]}
-                        picture={user?.picture}
-                    />
 
+                <Navbar logo=<Logo navBar /> itens={[
+                    { title: "Home", url: "/", key: 1 },
+                    { title: "Cursos", url: "/curso", key: 2 },
+                    { title: "Teste", url: "/", key: 3 },
+                ]}
+                    picture={user?.picture}
+                />
+                <div className={LayoutCSS.Layout} style={props.layoutStyle}>
                     {typeof (props.buttons) !== "undefined" && <NavigationButtonGroup style={{
-                        marginTop: "calc(var(--navbar-height) + 10px)",
+                        // marginTop: "calc(var(--navbar-height) + 10px)",
                         ...props.layoutNavigationButtonGroupStyle
                     }}>
                         {props.buttons}
@@ -81,7 +81,7 @@ const Layout = (props: LayoutProps) => {
     }
     else {
         return <div className={LayoutCSS.LayoutContainer} style={props.containerStyle}>
-            <div className={LayoutCSS.Layout} style={props.layoutStyle}>
+           
                 <Navbar logo=<Logo navBar /> itens={[
                     { title: "Home", url: "/", key: 1 },
                     { title: "Cursos", url: "/curso", key: 2 },
@@ -89,7 +89,7 @@ const Layout = (props: LayoutProps) => {
                 ]}
                     picture={user?.picture}
                 />
-
+                <div className={LayoutCSS.LayoutWithSidebar} style={props.layoutStyle}>
                 {/* {typeof (props.buttons) !== "undefined" && <NavigationButtonGroup style={{
                     marginTop: "calc(var(--navbar-height) + 10px)",
                     ...props.layoutNavigationButtonGroupStyle

@@ -9,10 +9,10 @@ const NavigationButtonGroup = (props: any) => {
         {
             display: "flex",
             flexDirection: "line",
-            flex: 1,
+            // flex: 1,
             alignContent: "normal",
             width: "-webkit-fill-available",
-            marginLeft: "1rem",
+            // marginLeft: "1rem",
             ...props?.style
         }    
 

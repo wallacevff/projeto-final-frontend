@@ -41,7 +41,7 @@
 }
 .Content{
     display: flex;
-    flex: 1;
+    /* flex: 1; */
     align-content: center;
     text-align: center;
     /* word-break: break-all; */

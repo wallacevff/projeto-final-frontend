@@ -10,12 +10,24 @@
 .Layout{
     display: flex;
     flex-direction: column;
+    margin-top: var(--navbar-height);
+    margin-left: var(--container-margin);
+    margin-right: var(--container-margin);
+    min-height: calc(100vh - (var(--footer-height) + var(--navbar-height)));
+}
+
+.LayoutWithSidebar{
+    display: flex;
+    flex-direction: column;
+    margin-left: var(--container-margin);
+    margin-right: var(--container-margin);
+    min-height: calc(100vh - (var(--footer-height) + var(--navbar-height)));
 }
 
 .Layout .Header{
-    margin-left: var(--container-margin);
+    /* margin-left: var(--container-margin); */
     display: flex;
-    flex: 1;
+    /* flex: 1; */
     flex-direction: column;
     justify-content: flex-start;
     /* margin-top: var(--navbar-height); */
@@ -36,15 +48,13 @@
     /* height: 100px; */
 }
 .Layout .Body{
-    margin-left: var(--container-margin);
-    margin-right: var(--container-margin);
+   
     display: flex;
     flex-direction: column;
-    flex: 1;
+    /* flex: 1; */
     /* align-content: center; */
     flex-wrap: wrap;
     justify-content: flex-start;
-    min-height: calc(100vh - var(--footer-height));
-    height: 100vh;
+    
 }
 
