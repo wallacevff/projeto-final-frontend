@@ -1,11 +1,23 @@
-interface User {
-    name: string;
-    picture: string;
-    birthdate: string; // You might want to use a Date object, but for simplicity, I'm using string here
-    email: string;
-  }
-  
-  interface UserLogin{
-    login: string;
-    password: string;
-  }
+import { TipoUsuario } from "./TipoUsuario";
+
+export interface User {
+  id: number;
+  nome: string;
+  imagem: string;
+  email: string;
+  senha: string;
+  imagem: string;
+  TipoUsuario: TipoUsuariosuario;
+}
+
+interface UserLogin {
+  login: string;
+  password: string;
+}
+
+enum AuthStatus {
+  LOADING,
+  SUCCESS,
+  ERROR,
+  UNAUTHENTICATED
+};

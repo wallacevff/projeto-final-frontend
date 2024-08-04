@@ -1,4 +1,5 @@
 // context/AuthContext.tsx
+import router from "next/router";
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 type AuthContextType = {
@@ -31,8 +32,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const logout = () => {
-    setUser(null);
     localStorage.removeItem('user');
+    setUser(null);
+    router.push('/login');
   };
 
   return (

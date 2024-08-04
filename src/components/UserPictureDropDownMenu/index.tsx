@@ -19,7 +19,6 @@ export default function ToggleMenu(props: any) {
   };
   function logoff() {
     logout();
-    router.push("/login");
   }
   return (
     <div style={{
