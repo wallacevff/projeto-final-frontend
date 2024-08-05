@@ -17,16 +17,18 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<Usuario | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [token, setToken] = useState<string>("");
+  const [token, setToken] = useState<string | null | undefined>("");
   const [userDto, setUserDto] = useState<UsuarioDto | null>(null)
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    setToken(localStorage.getItem('token'));
+    console.log(token);
     if (token && token !== "") {
       UsuarioService.getUsuarioByToken(token).then(dto => setUserDto(dto));
       if(userDto === null || userDto === undefined)
         router.push("/login");
       setUser(map.TO<Usuario>(userDto));
+      setLoading(false);
       return;
     }
     setLoading(false);
@@ -52,7 +54,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           setUserDto(userDto);
           const user = map.TO<Usuario>(userDto);
           setUser(user);
-          localStorage.setItem('user', token);
+          localStorage.setItem('token', token as string);
           router.push('/');
           return true;
         })
@@ -67,7 +69,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem('user');
+    localStorage.removeItem('token');
     console.log('User deleted');
     setUser(null);
     setUserDto(null);
