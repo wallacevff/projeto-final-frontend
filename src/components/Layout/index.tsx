@@ -8,13 +8,14 @@ import handler from "@/pages/api/login";
 import { CSSProperties, ReactNode, use, useEffect, useState } from "react";
 import { Footer } from "../Footer";
 import SideBar from "../SideBar";
-import { User } from "@/types/dataTypes/User";
+import { Usuario } from "@/types/domain/usuario/Usuario";
 import { NavbarItem } from "@/types/navbar/NavBarItem";
 import MenuItensService from "@/Services/MenuItensService";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface LayoutProps {
     title?: string;
-    user?: User;
+    user?: Usuario;
     children?: ReactNode;
     containerStyle?: CSSProperties;
     layoutStyle?: CSSProperties;
@@ -34,15 +35,11 @@ const VerifyIfIsArray = (varItem: any) => {
 }
 
 const Layout = (props: LayoutProps) => {
-    const [user, setUser] = useState<User | null>(null);
+    const {user} = useAuth();
     const [menuItems, setMenuItems] = useState<NavbarItem[]>([]);
-    useEffect(() => {
-        // Fetch user data from API
-        fetch('/api/hello')
-            .then(response => response.json())
-            .then(data => setUser(data))
-            .catch(error => console.error('Error fetching user data:', error));
-         MenuItensService.getMenuItens().then(menuItems => setMenuItems(menuItems));
+    useEffect(() => {    
+        MenuItensService.getMenuItens().then(menuItems => setMenuItems(menuItems));
+         
     }, []);
     if (!props.sidebar) {
         return (

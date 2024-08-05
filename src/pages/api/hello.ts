@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { TipoUsuario } from "@/types/dataTypes/TipoUsuario";
-import { User } from "@/types/dataTypes/User";
+import { TipoUsuario } from "@/types/domain/usuario/TipoUsuario";
+import { Usuario } from "@/types/domain/usuario/Usuario";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type Data = {
@@ -10,9 +10,9 @@ type Data = {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<User>,
+  res: NextApiResponse<Usuario>,
 ) {
-  const user: User = {
+  const user: Usuario = {
     id: 1,
     nome: 'Wallace Vidal',
     senha: 'senha123',

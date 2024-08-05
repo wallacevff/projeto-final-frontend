@@ -8,7 +8,7 @@ const Navbar = (props: NavBarProps) => {
         <div className={NavbarCSS.NavbarRoot}>
             {props.logo}
             <ul id={"ulNavbar1"}>
-                {props.itens.map((el, key) =>
+                { props.itens && props.itens.length > 0 && props.itens.map((el, key) =>
                     <Link 
                         id={`Item-Link-${key}`}
                         key={`Item-Link-${key}`}
@@ -18,7 +18,7 @@ const Navbar = (props: NavBarProps) => {
                     >{el.title}
                     </li>
                     </Link>
-                )
+                ) || "Carregando itens..."
                 }
             </ul>
             <ToggleMenu className={NavbarCSS.ToggleMenu}>

@@ -1,7 +1,7 @@
-import { TipoUsuario } from "@/types/dataTypes/TipoUsuario";
-import { User } from "@/types/dataTypes/User";
+import { TipoUsuario } from "@/types/domain/usuario/TipoUsuario";
+import { Usuario } from "@/types/domain/usuario/Usuario";
 
-const Usuarios: User[] = [
+const Usuarios: Usuario[] = [
     {
         id: 1,
         nome: "Wallace Vidal",

@@ -28,7 +28,7 @@
     padding: 10px;
     align-items: flex-start;
     align-content: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     background-color: inherit;
     font-weight: 700;
     color: #0071BD;

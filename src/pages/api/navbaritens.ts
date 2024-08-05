@@ -1,4 +1,4 @@
-import { User } from "@/types/dataTypes/User";
+import { Usuario } from "@/types/domain/usuario/Usuario";
 import { NextApiRequest, NextApiResponse } from "next";
 import NavbarItens from "@/data/NavbarItens";
 import Usuarios from "@/data/Usuarios";

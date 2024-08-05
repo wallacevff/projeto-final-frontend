@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout';
 import { useAuth } from '@/contexts/AuthContext';
-import { User } from '@/types/dataTypes/User';
+import { User } from '@/types/domain/usuario/Usuario';
 import { Avatar, Grid, Link, Paper, Typography } from '@mui/material';
 import router from 'next/router';
 import React, { useEffect, useState } from 'react';

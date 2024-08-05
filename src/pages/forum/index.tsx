@@ -5,7 +5,7 @@ import CreateForumTopicForm from "@/components/CreateForumTopicForm";
 import Layout from "@/components/Layout";
 import ModalCreateForumTopic from "@/components/ModalCreateForumTopic";
 import Link from "next/link";
-import { Topic } from "@/types/dataTypes/Topic";
+import { Topic } from "@/types/domain/forum/Topic";
 import { useEffect, useState } from "react";
 import { randomUUID } from "crypto";
 import { title } from "process";

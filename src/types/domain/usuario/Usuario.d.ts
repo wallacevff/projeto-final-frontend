@@ -1,6 +1,6 @@
 import { TipoUsuario } from "./TipoUsuario";
 
-export interface User {
+export interface Usuario {
   id: number;
   nome: string;
   imagem: string;
@@ -10,7 +10,7 @@ export interface User {
   TipoUsuario: TipoUsuariosuario;
 }
 
-interface UserLogin {
+interface UsuarioLogin {
   login: string;
   password: string;
 }
