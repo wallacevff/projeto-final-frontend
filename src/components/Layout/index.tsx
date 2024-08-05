@@ -10,7 +10,7 @@ import { Footer } from "../Footer";
 import SideBar from "../SideBar";
 import { Usuario } from "@/types/domain/usuario/Usuario";
 import { NavbarItem } from "@/types/navbar/NavBarItem";
-import MenuItensService from "@/Services/MenuItensService";
+import MenuItensService from "@/services/MenuItensService";
 import { useAuth } from "@/contexts/AuthContext";
 
 interface LayoutProps {

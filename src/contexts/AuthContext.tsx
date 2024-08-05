@@ -1,6 +1,8 @@
 // context/AuthContext.tsx
-import UsuarioService from "@/Services/UsuarioService";
-import { Usuario } from "@/types/domain/usuario/Usuario";
+import UsuarioService from "@/services/UsuarioService";
+import { Usuario, UsuarioDto } from "@/types/domain/usuario/Usuario";
+import { decodeToken, generateToken } from "@/utils/jwt";
+import map from "@/utils/mapper";
 import router from "next/router";
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
@@ -15,28 +17,60 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<Usuario | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [token, setToken] = useState<string>("");
+  const [userDto, setUserDto] = useState<UsuarioDto | null>(null)
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(storedUser);
+    const token = localStorage.getItem('token');
+    if (token && token !== "") {
+      UsuarioService.getUsuarioByToken(token).then(dto => setUserDto(dto));
+      if(userDto === null || userDto === undefined)
+        router.push("/login");
+      setUser(map.TO<Usuario>(userDto));
+      return;
     }
     setLoading(false);
+    router.push("/login");
   }, []);
 
-  const login = async (username: string, password: string) => {
-    const usu = await UsuarioService.getUsuarioLogin(username, password);
-    if (usu){
-      setUser(usu);
-      localStorage.setItem('user', usu.nome);
-      return true;
+  const login = (username: string, password: string): boolean  => {
+    if (username && password) {
+      UsuarioService.getUsuarioLogin(username, password)
+        .then((token) => {
+          if (token) {
+            setToken(token);
+            console.log(token);
+            localStorage.setItem('token', token);
+            console.log(`localstorage: ${localStorage.getItem('token')}`);
+            return UsuarioService.getUsuarioByToken(token);
+            
+          } else {
+            throw new Error('Invalid token');
+          }
+        })
+        .then((userDto) => {
+          setUserDto(userDto);
+          const user = map.TO<Usuario>(userDto);
+          setUser(user);
+          localStorage.setItem('user', token);
+          router.push('/');
+          return true;
+        })
+        .catch((error) => {
+          console.error('Login failed:', error);
+          return false;
+        });
+    } else {
+      return false;
     }
     return false;
   };
 
   const logout = () => {
     localStorage.removeItem('user');
+    console.log('User deleted');
     setUser(null);
+    setUserDto(null);
     router.push('/login');
   };
 

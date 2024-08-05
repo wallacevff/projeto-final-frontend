@@ -1,2 +1,6 @@
 
-export interface NavbarItem { title: string, url: string, key: number };
+export interface NavbarItem { 
+    key: number,
+    title: string,
+    url: string,
+};

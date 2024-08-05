@@ -7,6 +7,17 @@ export interface Usuario {
   email: string;
   senha: string;
   imagem: string;
+  tipousuario: TipoUsuariosuario;
+  // navbaritens: NavbarItem[];
+}
+
+
+export interface UsuarioDto {
+  id: number;
+  nome: string;
+  imagem: string;
+  email: string;
+  imagem: string;
   TipoUsuario: TipoUsuariosuario;
 }
 

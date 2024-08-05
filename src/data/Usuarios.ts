@@ -6,9 +6,9 @@ const Usuarios: Usuario[] = [
         id: 1,
         nome: "Wallace Vidal",
         email: "wallvff@gmail.com",
-        senha: "senha123",
+        senha: "123",
         imagem: "http://wallvff.com.br/perfil.jpg",
-        TipoUsuario: TipoUsuario.PROFESSOR
+        tipousuario: TipoUsuario.PROFESSOR
     },
     {
         id: 2,
@@ -16,7 +16,15 @@ const Usuarios: Usuario[] = [
         email: "jsilva@gmail.com",
         senha: "senha456",
         imagem: "http://josésilva.com.br/foto.jpg",
-        TipoUsuario: TipoUsuario.ALUNO
+        tipousuario: TipoUsuario.ALUNO
+    },
+    {
+        id: 3,
+        nome: "Wallace Vidal",
+        email: "admin",
+        senha: "@admin",
+        imagem: "http://josésilva.com.br/foto.jpg",
+        tipousuario: TipoUsuario.ALUNO
     },
 ];
 export default Usuarios;
