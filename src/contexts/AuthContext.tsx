@@ -1,7 +1,6 @@
 // context/AuthContext.tsx
 import UsuarioService from "@/services/UsuarioService";
 import { Usuario, UsuarioDto } from "@/types/domain/usuario/Usuario";
-import { decodeToken, generateToken } from "@/utils/jwt";
 import map from "@/utils/mapper";
 import router from "next/router";
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
@@ -21,7 +20,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [userDto, setUserDto] = useState<UsuarioDto | null>(null)
 
   useEffect(() => {
-    setToken(localStorage.getItem('token'));
+    const t = localStorage.getItem('token');
+    setToken(t);
     console.log(token);
     if (token && token !== "") {
       UsuarioService.getUsuarioByToken(token).then(dto => setUserDto(dto));
@@ -54,6 +54,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           setUserDto(userDto);
           const user = map.TO<Usuario>(userDto);
           setUser(user);
+          localStorage.removeItem('user');
+          localStorage.removeItem('token');
           localStorage.setItem('token', token as string);
           router.push('/');
           return true;
