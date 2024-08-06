@@ -9,7 +9,7 @@ import BackButton from "@/components/BackButton";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import router from "next/router";
-import CursosService from "@/Services/CursosService";
+import CursosService from "@/services/CursosService";
 import Curso from "@/types/domain/curso/Curso";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -45,42 +45,6 @@ export default function CursosPage() {
                     )) : <></>
                 }
 
-
-                {/* <Card title="Curso de Alemão" link="curso/curso/2">
-                    <CursoInfo
-                        NroTurmas={1}
-                        NroAlunos={20}
-                        NroTarefas={12}
-                    />
-                </Card>
-                <Card title="Curso de Inglês" link="curso/curso/3">
-                    <CursoInfo
-                        NroTurmas={1}
-                        NroAlunos={20}
-                        NroTarefas={12}
-                    />
-                </Card>
-                <Card title="Curso de Inglês" link="curso/curso/4">
-                    <CursoInfo
-                        NroTurmas={1}
-                        NroAlunos={20}
-                        NroTarefas={12}
-                    />
-                </Card>
-                <Card title="Curso de Inglês" link="curso/5">
-                    <CursoInfo
-                        NroTurmas={1}
-                        NroAlunos={20}
-                        NroTarefas={12}
-                    />
-                </Card>
-                <Card title="Curso de Inglês" link="curso/curso/6">
-                    <CursoInfo
-                        NroTurmas={1}
-                        NroAlunos={20}
-                        NroTarefas={12}
-                    />
-                </Card> */}
             </Cards>
         </Layout>
     );
