@@ -1,5 +1,5 @@
 // context/AuthContext.tsx
-import UsuarioService from "@/asd/UsuarioService";
+import UsuarioService from "@/services/UsuarioService";
 import { Usuario, UsuarioDto } from "@/types/domain/usuario/Usuario";
 import { decodeToken } from "@/utils/jwt";
 import map from "@/utils/mapper";

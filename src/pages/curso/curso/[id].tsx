@@ -5,7 +5,7 @@ import Cards from "@/components/Cards";
 import Layout from "@/components/Layout";
 import NavigationButtonGroup from "@/components/NavigationButtonGroup";
 import { useAuth } from "@/contexts/AuthContext";
-import CursosService from "@/asd/CursosService";
+import CursosService from "@/services/CursosService";
 import Curso from "@/types/domain/curso/Curso";
 import { UUID } from "crypto";
 import Link from "next/link";
