@@ -9,7 +9,7 @@ import BackButton from "@/components/BackButton";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import router from "next/router";
-import CursosService from "@/services/CursosService";
+import CursosService from "@/asd/CursosService";
 import Curso from "@/types/domain/curso/Curso";
 
 const inter = Inter({ subsets: ["latin"] });
