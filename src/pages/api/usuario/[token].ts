@@ -12,7 +12,7 @@ export default function handler(
     if (req.method === "GET") {
         const usuarioDecoded = decodeToken((req.query.token!) as unknown as string);
         const usuario = Usuarios.filter(u => u.id === usuarioDecoded?.id)[0];
-        console.log(usuario);
+        // console.log(usuario);
         res.status(200).json(map.TO<UsuarioDto>(usuario));
     }
 }

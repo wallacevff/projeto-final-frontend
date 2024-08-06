@@ -1,5 +1,5 @@
 // context/AuthContext.tsx
-import UsuarioService from "@/services/UsuarioService";
+import UsuarioService from "@/Services/UsuarioService";
 import { Usuario, UsuarioDto } from "@/types/domain/usuario/Usuario";
 import { decodeToken } from "@/utils/jwt";
 import map from "@/utils/mapper";
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         
         const udto = await UsuarioService.getUsuarioByToken(tk as string);
         UpdateUser(tk, udto);
-        console.log(`User authenticated: ${userDto?.nome}`);
+        // console.log(`User authenticated: ${userDto?.nome}`);
         
       }
       setLoading(false);
@@ -47,9 +47,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       
       let token = await UsuarioService.getUsuarioLogin(username, password);
       
-      console.log(`User authenticated: ${token}`);
+      // console.log(`User authenticated: ${token}`);
       if (!token) {
-        console.log('Invalid credentials');
+        // console.log('Invalid credentials');
         return false;
       }
       let uDto = await UsuarioService.getUsuarioByToken(token);
@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const logout = () => {
     localStorage.removeItem('token');
-    console.log('User deleted');
+    // console.log('User deleted');
     UpdateUser(null, null);
     router.push('/login');
   };

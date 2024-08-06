@@ -3,14 +3,10 @@ import Logo from "@/components/Logo";
 import Navbar from "@/components/Navbar";
 import LayoutCSS from "@/components/Layout/Layout.module.css";
 import NavigationButtonGroup from "../NavigationButtonGroup";
-import ToggleMenu from "../UserPictureDropDownMenu";
-import handler from "@/pages/api/login";
+
 import { CSSProperties, ReactNode, use, useEffect, useState } from "react";
 import { Footer } from "../Footer";
-import SideBar from "../SideBar";
 import { Usuario } from "@/types/domain/usuario/Usuario";
-import { NavbarItem } from "@/types/navbar/NavBarItem";
-import MenuItensService from "@/services/MenuItensService";
 import { useAuth } from "@/contexts/AuthContext";
 
 interface LayoutProps {
@@ -79,7 +75,7 @@ const Layout = (props: LayoutProps) => {
     else {
         return <div className={LayoutCSS.LayoutContainer} style={props.containerStyle}>
            
-                <Navbar logo=<Logo navBar /> itens={menuItems}
+                <Navbar logo=<Logo navBar /> itens={user?.navbaritens}
                     picture={user?.imagem}
                 />
                 <div className={LayoutCSS.LayoutWithSidebar} style={props.layoutStyle}>        

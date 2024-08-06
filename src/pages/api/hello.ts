@@ -18,7 +18,7 @@ export default function handler(
     senha: 'senha123',
     imagem: 'http://wallvff.com.br/perfil.jpg',
     email: 'wallvff@gmail.com',
-    TipoUsuario: TipoUsuario.PROFESSOR,
+    tipousuario: TipoUsuario.PROFESSOR,
     
   };
   res.status(200).json(user);
