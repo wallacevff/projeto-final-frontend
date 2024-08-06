@@ -11,12 +11,13 @@ interface JwtPayload {
 
 // Função para gerar o token JWT
 export const generateToken = (usuario: UsuarioDto): string => {
-   const token  = jwt.sign({ usuario } as object, SECRET_KEY, { expiresIn: '1h' });
+   const token  = jwt.sign({ usuario } as object, SECRET_KEY, { expiresIn: '0s' });
    return token;
 }
 
 // Função para verificar o token JWT
 export const verifyToken = (token: string): JwtPayload | null => {
+  const SECRET_KEY = 'Abc242526'
   try {
     return jwt.verify(token, SECRET_KEY) as JwtPayload
   } catch (error) {

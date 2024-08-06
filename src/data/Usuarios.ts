@@ -5,26 +5,41 @@ const Usuarios: Usuario[] = [
     {
         id: 1,
         nome: "Wallace Vidal",
-        email: "wallvff@gmail.com",
+        email: "wallvff",
         senha: "123",
         imagem: "http://wallvff.com.br/perfil.jpg",
-        tipousuario: TipoUsuario.PROFESSOR
+        tipousuario: TipoUsuario.PROFESSOR,
+        navbaritens: [
+            { title: "Home", url: "/", key: 1 },
+            { title: "Cursos", url: "/curso", key: 2 },
+            { title: "Criar Curso", url: "/curso/criar", key: 3 }
+        ]
     },
     {
         id: 2,
         nome: "José Silva",
-        email: "jsilva@gmail.com",
-        senha: "senha456",
+        email: "klaus",
+        senha: "@admin",
         imagem: "http://josésilva.com.br/foto.jpg",
-        tipousuario: TipoUsuario.ALUNO
+        tipousuario: TipoUsuario.ALUNO,
+        navbaritens: [
+            { title: "Home", url: "/", key: 1 },
+            { title: "Cursos", url: "/curso", key: 2 },
+
+        ]
     },
     {
         id: 3,
         nome: "Wallace Vidal",
         email: "admin",
         senha: "@admin",
-        imagem: "http://josésilva.com.br/foto.jpg",
-        tipousuario: TipoUsuario.ALUNO
+        imagem: "https://wallvff.com.br/perfil.jpg",
+        tipousuario: TipoUsuario.ALUNO,
+        navbaritens: [
+            { title: "Home", url: "/", key: 1 },
+            { title: "Cursos", url: "/curso", key: 2 },
+
+        ]
     },
 ];
 export default Usuarios;

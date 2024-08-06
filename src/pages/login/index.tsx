@@ -23,7 +23,7 @@ const LoginPage = () => {
         textDecoration: "underline"
     }
     async function  loginAction() {
-        if (login(username, password)) {
+        if (await login(username, password)) {
             router.push('/');
           } else {
             setError('Usuário ou senha incorretos');

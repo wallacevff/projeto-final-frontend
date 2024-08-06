@@ -10,6 +10,9 @@ export default function handler(
     res: NextApiResponse<UsuarioDto | null | undefined>,
 ) {
     if (req.method === "GET") {
-        res.status(200).json(decodeToken((req.query.token!) as unknown as string));
+        const usuarioDecoded = decodeToken((req.query.token!) as unknown as string);
+        const usuario = Usuarios.filter(u => u.id === usuarioDecoded?.id)[0];
+        console.log(usuario);
+        res.status(200).json(map.TO<UsuarioDto>(usuario));
     }
 }

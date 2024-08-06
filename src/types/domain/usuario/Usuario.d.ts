@@ -8,7 +8,7 @@ export interface Usuario {
   senha: string;
   imagem: string;
   tipousuario: TipoUsuariosuario;
-  // navbaritens: NavbarItem[];
+  navbaritens?: NavbarItem[];
 }
 
 
@@ -18,7 +18,8 @@ export interface UsuarioDto {
   imagem: string;
   email: string;
   imagem: string;
-  TipoUsuario: TipoUsuariosuario;
+  tipousuario: TipoUsuariosuario;
+  navbaritens?: NavbarItem[];
 }
 
 interface UsuarioLogin {

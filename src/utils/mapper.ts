@@ -1,3 +1,4 @@
+import NavbarItens from "@/data/NavbarItens";
 import { Usuario, UsuarioDto } from "@/types/domain/usuario/Usuario";
 
 export default class map {
@@ -6,9 +7,10 @@ export default class map {
         return {
             id: usuario?.id,
             nome: usuario?.nome,
-            tipoUsuario: usuario?.TipoUsuario,
+            tipousuario: usuario?.tipousuario,
             email: usuario?.email,
-            imagem: usuario?.imagem
+            imagem: usuario?.imagem,
+            navbaritens : usuario?.navbaritens
         } as T
     }
 

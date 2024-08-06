@@ -22,7 +22,6 @@ export default function Home() {
     const router = useRouter();
     function logoff() {
         logout();
-        router.push("/login");
     }
     useEffect(() => {
         if (!user) {

@@ -7,7 +7,7 @@ interface LoginParams {
     password: string;
   }
 export default {
-   async getUsuarioLogin(usuario: string, senha: string) : Promise<string> {
+   async getUsuarioLogin(usuario: string, senha: string) : Promise<string | null> {
 
         return (await axios.post('/api/usuario/getUsuarioLogin', 
             {

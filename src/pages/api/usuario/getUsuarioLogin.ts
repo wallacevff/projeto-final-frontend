@@ -15,7 +15,10 @@ export default function handler(
         const user: Usuario | null | undefined = Usuarios.find(
             u => u.email === body.login && u.senha === body.password
         );
-        // console.log(user);
+        if (!user) {
+            res.status(200).json(null);
+            return;
+        }
         res.status(200).json(generateToken(map.TO<UsuarioDto>(user)));
     }
 }

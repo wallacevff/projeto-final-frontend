@@ -36,16 +36,17 @@ const VerifyIfIsArray = (varItem: any) => {
 
 const Layout = (props: LayoutProps) => {
     const {user} = useAuth();
-    const [menuItems, setMenuItems] = useState<NavbarItem[]>([]);
-    useEffect(() => {    
-        MenuItensService.getMenuItens().then(menuItems => setMenuItems(menuItems));
+    // console.log(user);
+    // const [menuItems, setMenuItems] = useState<NavbarItem[]>([]);
+    // useEffect(() => {    
+    //     MenuItensService.getMenuItens().then(menuItems => setMenuItems(menuItems));
          
-    }, []);
+    // }, []);
     if (!props.sidebar) {
         return (
             <div className={LayoutCSS.LayoutContainer} style={props.containerStyle}>
 
-                <Navbar logo=<Logo navBar /> itens={menuItems}
+                <Navbar logo=<Logo navBar /> itens={user?.navbaritens}
                     picture={user?.imagem}
                 />
                 <div className={LayoutCSS.Layout} style={props.layoutStyle}>
