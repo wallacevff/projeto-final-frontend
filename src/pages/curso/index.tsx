@@ -11,6 +11,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import router from "next/router";
 import CursosService from "@/services/CursosService";
 import Curso from "@/types/domain/curso/Curso";
+import { TipoUsuario } from "@/types/domain/usuario/TipoUsuario";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +21,16 @@ export default function CursosPage() {
 
 
     useEffect(() => {
+        var getCursos = () => {};
         if (!user) {
             router.push('/login');
         }
-        const getCursos = async () => { await CursosService.getCursos(); setCursos(await CursosService.getCursos()); };
+        if(user?.tipousuario === TipoUsuario.PROFESSOR) {
+            getCursos = async () => { setCursos(await CursosService.getCursosProfessor(user.id)); };
+            getCursos();
+            return;
+        }
+        getCursos = async () => { await CursosService.getCursos(); setCursos(await CursosService.getCursos()); };
         getCursos();
     }, [user, router]);
   

@@ -6,5 +6,6 @@ export default interface Curso {
     categoriaId: UUID;
     cursocategoria : CursoCategoria;
     turmas? : Turma[];
-    professorId?: UUID;
+    // professorId?: UUID;
+    professorId?: number;
 }

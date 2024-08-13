@@ -9,6 +9,7 @@ const Cursos : Curso[] = [
             id: "387cd698-4b8f-4ca5-9810-535a924abc71",
             nome: "Linguística",
         },
+        professorId: 1,
         turmas: [
             {
                 id: "45153028-8792-4092-b873-0094246b6446",
@@ -32,6 +33,7 @@ const Cursos : Curso[] = [
             id: "387cd698-4b8f-4ca5-9810-535a924abc71",
             nome: "Ciências Exatas",
         },
+        professorId: 3,
         turmas: [
             {
                 id: "45153028-8792-4092-b873-0094246b6446",
@@ -57,7 +59,31 @@ const Cursos : Curso[] = [
                 nome: "Geometria",
                 qtdAlunosPermitidos: 10,
             }
-        ]
+        ],
+    },
+    {
+        id: "92a3a3ea-edfe-4a4c-98c7-2438c8f697c7",
+        nome: "Curso de História",
+        categoriaId: "387cd698-4b8f-4ca5-9810-535a924abc72",
+        cursocategoria: {
+            id: "387cd698-4b8f-4ca5-9810-535a924abc71",
+            nome: "Ciências Humanas",
+        },
+        professorId: 3,
+        turmas: [
+            {
+                id: "45153028-8792-4092-b873-0094246b6446",
+                numero: 1,
+                nome: "História I",
+                qtdAlunosPermitidos: 10,
+            },
+            {
+                id: "e5ff6bc8-6617-4353-b754-ef594cde3f92",
+                numero: 3,
+                nome: "História II",
+                qtdAlunosPermitidos: 10,
+            }
+        ],
     }
 ];
 

@@ -7,7 +7,7 @@ const Usuarios: Usuario[] = [
         nome: "Wallace Vidal",
         email: "wallvff",
         senha: "123",
-        imagem: "http://wallvff.com.br/perfil.jpg",
+        imagem: "https://wallvff.com.br/perfil.jpg",
         tipousuario: TipoUsuario.PROFESSOR,
         navbaritens: [
             { title: "Home", url: "/", key: 1 },
@@ -17,28 +17,29 @@ const Usuarios: Usuario[] = [
     },
     {
         id: 2,
-        nome: "José Silva",
-        email: "klaus",
-        senha: "@admin",
-        imagem: "http://josésilva.com.br/foto.jpg",
+        nome: "Robert Leite",
+        email: "robert",
+        senha: "123",
+        imagem: "https://wallvff.com.br/robert.png",
         tipousuario: TipoUsuario.ALUNO,
         navbaritens: [
             { title: "Home", url: "/", key: 1 },
-            { title: "Cursos", url: "/curso", key: 2 },
-
+            { title: "Meus Cursos", url: "/curso", key: 2 },
+            { title: "Minhas Notas", url: "/notas", key: 3  },
+            { title: "Inscrição Cursos", url: "/cursosDisponiveis", key: 3  },
         ]
     },
     {
         id: 3,
-        nome: "Wallace Vidal",
-        email: "admin",
-        senha: "@admin",
-        imagem: "https://wallvff.com.br/perfil.jpg",
-        tipousuario: TipoUsuario.ALUNO,
+        nome: "Diego Silva",
+        email: "diego",
+        senha: "123",
+        imagem: "https://wallvff.com.br/diego.png",
+        tipousuario: TipoUsuario.PROFESSOR,
         navbaritens: [
             { title: "Home", url: "/", key: 1 },
             { title: "Cursos", url: "/curso", key: 2 },
-
+            { title: "Criar Curso", url: "/curso/criar", key: 3 }
         ]
     },
 ];
