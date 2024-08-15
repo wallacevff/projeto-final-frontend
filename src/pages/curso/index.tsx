@@ -22,6 +22,11 @@ export default function CursosPage() {
 
     useEffect(() => {
         var getCursos = () => {};
+        if(router.query.all) {
+            getCursos = async () => { setCursos(await CursosService.getCursos()); };
+            getCursos();
+            return;
+        }
         if (!user) {
             router.push('/login');
         }
@@ -30,8 +35,10 @@ export default function CursosPage() {
             getCursos();
             return;
         }
-        getCursos = async () => { await CursosService.getCursos(); setCursos(await CursosService.getCursos()); };
-        getCursos();
+        else{
+            getCursos = async () => { setCursos(await CursosService.getCursosAluno(user!.id)); };
+            getCursos();
+        }
     }, [user, router]);
   
 
