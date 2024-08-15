@@ -16,22 +16,22 @@ const LoginPage = () => {
         // marginLeft: "10px",
         marginTop: "10px",
         // background: "#09870e",
-        color:"#0071BD",
+        color: "#0071BD",
         borderRadius: "6px",
         padding: "4px",
         fontSize: "10cap",
         textDecoration: "underline"
     }
-    async function  loginAction() {
+    async function loginAction() {
         if (await login(username, password)) {
             router.push('/');
-          } else {
+        } else {
             setError('Usuário ou senha incorretos');
-          }
+        }
     }
     const router = useRouter();
     return <div className={LoginCSS.LoginDiv}>
-        <Logo className={LoginCSS.LogoSmallScreen}/>
+        <Logo className={LoginCSS.LogoSmallScreen} />
         <div className={LoginCSS.BlueDiv}>
             <div className={LoginCSS.Logo}>
                 <Logo />
@@ -57,9 +57,12 @@ const LoginPage = () => {
 
                 <div className={LoginCSS.LoginForm}>
                     <label form="password">Senha</label>
-                    <input title="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                    <input title="password" type="password" value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        onKeyDown={(e) => {e.key == "Enter" ? loginAction() : ""}}
+                    ></input>
                 </div>
-                {error && <p style={{color:"red"}}>{error}</p>}
+                {error && <p style={{ color: "red" }}>{error}</p>}
                 <div className={LoginCSS.ButtonGroup}>
                     <Button
                         title="Login"
@@ -77,7 +80,7 @@ const LoginPage = () => {
                         type="button"
                         style={styleForCriarUsuarioButton}
                     />
-                    
+
                 </div>
 
             </div>
