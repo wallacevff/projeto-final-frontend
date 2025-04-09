@@ -26,7 +26,7 @@ const Usuarios: Usuario[] = [
             { title: "Home", url: "/", key: 1 },
             { title: "Meus Cursos", url: "/curso", key: 2 },
             { title: "Minhas Notas", url: "/notas", key: 3  },
-            { title: "Inscrição Cursos", url: "/cursosDisponiveis", key: 3  },
+            { title: "Inscrição Cursos", url: "/curso?all=true", key: 3  },
         ]
     },
     {

@@ -18,29 +18,32 @@ const inter = Inter({ subsets: ["latin"] });
 export default function CursosPage() {
     const { user } = useAuth();
     const [cursos, setCursos] = useState<Curso[]>([]);
-
-
+    const [loading, setLoading] = useState(true);
+    const all = router.query.all;
     useEffect(() => {
-        var getCursos = () => {};
-        if(router.query.all) {
+        var getCursos = () => { };
+        if (all) {
             getCursos = async () => { setCursos(await CursosService.getCursos()); };
             getCursos();
+            setLoading(false);
             return;
         }
         if (!user) {
             router.push('/login');
         }
-        if(user?.tipousuario === TipoUsuario.PROFESSOR) {
+        if (user?.tipousuario === TipoUsuario.PROFESSOR) {
             getCursos = async () => { setCursos(await CursosService.getCursosProfessor(user.id)); };
             getCursos();
+            setLoading(false);
             return;
         }
-        else{
+        else {
             getCursos = async () => { setCursos(await CursosService.getCursosAluno(user!.id)); };
             getCursos();
+            setLoading(false);
         }
-    }, [user, router]);
-  
+    }, [user, all]);
+
 
 
     return (
@@ -49,6 +52,7 @@ export default function CursosPage() {
                 <BackButton key={"back-1"} />
             ]}
         >
+            {loading && <p>Carregando...</p>  ||
             <Cards>
                 {
                     cursos.length > 0 ?
@@ -60,6 +64,7 @@ export default function CursosPage() {
                 }
 
             </Cards>
+            }
         </Layout>
     );
 }
